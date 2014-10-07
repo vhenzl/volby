@@ -1,0 +1,100 @@
+﻿        #listek, #vysledky {
+            font-family: arial, helvetica, sans-serif;
+        }
+        /*#listek {font-size: small;}*/
+        td {
+            vertical-align: top;
+            padding: 4px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        td {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        #listek h2 {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            font-size: small;
+            font-weight: normal;
+        }
+
+        #listek p {
+            margin: 0px;
+        }
+
+        /* upravit podle poctu stran */
+        /* #listek td {font-size: 12px;} */
+        /* div#listek {width: 1200px;}*/
+
+        div {
+            margin-top: 1em;
+        }
+
+            div#patka {
+                border-top: 1px dotted gray;
+            }
+
+            div#listek {
+                border: 1px solid gray;
+                padding: 1em;
+                background-color: #eeeeee;
+            }
+
+            div#vysledky {
+                min-height: 12em;
+            }
+
+        input {
+            vertical-align: middle;
+        }
+
+        label {
+            display: block;
+            text-indent: -1em;
+            padding-left: 1em;
+            margin: 0px;
+        }
+
+            label input {
+                height: 1.5em;
+                width: 1.5em;
+            }
+
+            label.strana input {
+                height: 2em;
+                width: 2em;
+            }
+
+            label.strana span {
+                font-weight: bold;
+            }
+
+        u {
+            cursor: pointer;
+        }
+
+        .dostalHlas {
+            background-color: yellow;
+        }
+
+        .neplatnyListek {
+            background-color: #ffcccc;
+        }
+
+        tr.skryte {
+            display: none;
+        }
+
+        tr.odkryte {
+            display: table-row;
+        }
+
+        .celkem {
+        }
