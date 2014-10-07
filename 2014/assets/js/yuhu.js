@@ -378,7 +378,7 @@ function vypsatVysledek(){
 
     // odbarveni vseho
     for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
-        prvek = document.getElementById("i"+"s"+strana+"k"+kandidat);
+        prvek = document.getElementById("i"+"s"+strana+"k"+kandidat).parentElement;
         prvek.className = "";
     }
 
@@ -386,7 +386,7 @@ function vypsatVysledek(){
         document.getElementById("tabulkaListku").className = "";
         // obarveni kandidatu
         for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
-            prvek = document.getElementById("i"+"s"+strana+"k"+kandidat);
+            prvek = document.getElementById("i"+"s"+strana+"k"+kandidat).parentElement;
             if(poleKandidatu[strana][kandidat]) prvek.className = "dostalHlas";
         }
     }

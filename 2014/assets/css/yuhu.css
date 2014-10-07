@@ -1,6 +1,6 @@
-﻿        #listek, #vysledky {
+﻿        /*#listek, #vysledky {
             font-family: arial, helvetica, sans-serif;
-        }
+        }*/
         /*#listek {font-size: small;}*/
         td {
             vertical-align: top;
@@ -33,9 +33,9 @@
         /* #listek td {font-size: 12px;} */
         /* div#listek {width: 1200px;}*/
 
-        div {
+        /*div {
             margin-top: 1em;
-        }
+        }*/
 
             div#patka {
                 border-top: 1px dotted gray;
@@ -50,7 +50,7 @@
             div#vysledky {
                 min-height: 12em;
             }
-
+/*
         input {
             vertical-align: middle;
         }
@@ -71,7 +71,7 @@
                 height: 2em;
                 width: 2em;
             }
-
+*/
             label.strana span {
                 font-weight: bold;
             }
