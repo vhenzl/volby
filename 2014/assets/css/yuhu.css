@@ -40,16 +40,12 @@ div#vysledky {
     margin-top: 20px;
 }
 
-label.strana span {
-    font-weight: bold;
-}
-
-u {
-    cursor: pointer;
-}
-
 .strana {
     margin: 2px;
+}
+
+.strana label span {
+    font-weight: bold;
 }
 
 .kandidat {
@@ -76,13 +72,6 @@ u {
     border-color: #dca7a7;
 }
 
-tr.skryte {
-    display: none;
-}
-
-tr.odkryte {
-    display: table-row;
-}
-
 .celkem {
+    padding: 4px;
 }

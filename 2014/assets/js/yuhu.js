@@ -351,13 +351,6 @@ function vypocitatStrany(){
     hlaseni.strany += "Z následujících čísel se počítá zisk mandátů pro strany. Jednotlivé strany dostaly tento počet hlasů: <br>";
     for(var strana in hlasyStranam) if (hlasyStranam[strana]>0) hlaseni.strany += jmenoStrany[strana] + ": " + sklonujHlasy(hlasyStranam[strana]) + ", ";
 
-    // odkaz na odkryti
-    if(document.getElementById("radekCelkem").className == "skryte"){
-        hlaseni.strany += " <br><u onclick='document.getElementById(\"radekCelkem\").className = \"odkryte\";'>Zobrazit dole v tabulce</u>."
-    }
-    else if(document.getElementById("radekCelkem").className == "odkryte"){
-        hlaseni.strany += " <br><u onclick='document.getElementById(\"radekCelkem\").className = \"skryte\";'>Dole v tabulce skrýt</u>."
-    }
     // využití hlasů
     hlaseni.vyuziti += "Volič využil "+ sklonujHlasy(vyuzitoHlasu) + ", tedy " + Math.floor(100*vyuzitoHlasu/mandatu) + " % svých hlasů. ";
 
