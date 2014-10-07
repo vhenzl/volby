@@ -1,0 +1,77 @@
+﻿table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+        
+td {
+    vertical-align: top;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#listek h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: small;
+    font-weight: normal;
+}
+
+#listek p {
+    margin: 0;
+}
+
+#tabulkaListku {
+    font-size: 12px;
+}
+
+div#patka {
+    border-top: 1px dotted gray;
+    padding-top: 20px;
+}
+
+div#listek {
+    border: 1px solid gray;
+    padding: 1em;
+    background-color: #eeeeee;
+}
+
+div#vysledky {
+    margin-top: 20px;
+}
+
+.strana {
+    margin: 2px;
+}
+
+.strana label span {
+    font-weight: bold;
+}
+
+.kandidat {
+    padding: 0 4px 4px 4px;
+}
+
+.dostalHlas {
+    background-image: -webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
+    background-image: -o-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#dff0d8),to(#c8e5bc));
+    background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #b2dba1;
+}
+
+.neplatnyListek {
+    background-image: -webkit-linear-gradient(top,#f2dede 0,#e7c3c3 100%);
+    background-image: -o-linear-gradient(top,#f2dede 0,#e7c3c3 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f2dede),to(#e7c3c3));
+    background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #dca7a7;
+}
+
+.celkem {
+    padding: 4px;
+}
