@@ -52,9 +52,9 @@
     
         <div class="volby-template">
    
-            <h1>Simulátor volebního lístku - komunální volby</h1>
+            <h1>Simulátor volebního lístku <small>pro komunální volby 2014 v Přibyslavi</small></h1>
 
-            <p>Před sebou vidíte hlasovací lístek podobný tomu, který budete vyplňovat v komunálních volbách. Před vyplňováním si napřed všimněte, kolik se volí členů zastupitelstva (v tomto příkladu 15, ale všude je to číslo jiné). Zde si můžete vyzkoušet, kdy je vyplnění lístku neplatné a kterým stranám a kandidátům vlastně dáváte hlas. Dole byste hned měli vidět výsledky. Takže si klikejte.</p>
+            <p>Před sebou vidíte hlasovací lístek podobný tomu, který budete vyplňovat v komunálních volbách. Před vyplňováním si napřed všimněte, kolik se volí členů zastupitelstva (v případě Přibyslavi je to 15). Zde si můžete vyzkoušet, kdy je vyplnění lístku neplatné a kterým stranám a kandidátům vlastně dáváte hlas. Dole uvidíte výsledky.</p>
 
             <div id="listek">
                 <h2><b>HLASOVACÍ LÍSTEK</b><br>pro volby do zastupitelstva města Přibyslav</h2>
@@ -63,146 +63,167 @@
                 <table id="tabulkaListku">
                     <tr>
                         <td>
-                            <label for="s1" class="checkbox-inline strana"><input type="checkbox" id="s1" onchange="prepocitat()"> <span id="js1">Strana 1</span><br>vylosované číslo 1</label>
+                            <div class="strana">
+                                <label for="s1" class="checkbox-inline strana"><input type="checkbox" id="s1" onchange="prepocitat()"> <span id="js1">Strana 1</span>
+                                    <br>vylosované číslo 1</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s2" class="checkbox-inline strana"><input type="checkbox" id="s2" onchange="prepocitat()"> <span id="js2">Strana 2</span><br>vylosované číslo 2</label>
+                            <div class="strana">
+                                <label for="s2" class="checkbox-inline strana"><input type="checkbox" id="s2" onchange="prepocitat()"> <span id="js2">Strana 2</span>
+                                    <br>vylosované číslo 2</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s3" class="checkbox-inline strana"><input type="checkbox" id="s3" onchange="prepocitat()"> <span id="js3">Strana 3</span><br>vylosované číslo 3</label>
+                            <div class="strana">
+                                <label for="s3" class="checkbox-inline strana"><input type="checkbox" id="s3" onchange="prepocitat()"> <span id="js3">Strana 3</span>
+                                    <br>vylosované číslo 3</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s4" class="checkbox-inline strana"><input type="checkbox" id="s4" onchange="prepocitat()"> <span id="js4">Strana 4</span><br>vylosované číslo 4</label>
+                            <div class="strana">
+                                <label for="s4" class="checkbox-inline strana"><input type="checkbox" id="s4" onchange="prepocitat()"> <span id="js4">Strana 4</span>
+                                    <br>vylosované číslo 4</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s5" class="checkbox-inline strana"><input type="checkbox" id="s5" onchange="prepocitat()"> <span id="js5">Strana 5</span><br>vylosované číslo 5</label>
+                            <div class="strana">
+                                <label for="s5" class="checkbox-inline strana"><input type="checkbox" id="s5" onchange="prepocitat()"> <span id="js5">Strana 5</span>
+                                    <br>vylosované číslo 5</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s6" class="checkbox-inline strana"><input type="checkbox" id="s6" onchange="prepocitat()"> <span id="js6">Strana 6</span><br>vylosované číslo 6</label>
+                            <div class="strana">
+                                <label for="s6" class="checkbox-inline strana"><input type="checkbox" id="s6" onchange="prepocitat()"> <span id="js6">Strana 6</span>
+                                    <br>vylosované číslo 6</label>
+                            </div>
                         </td>
                         <td>
-                            <label for="s7" class="checkbox-inline strana"><input type="checkbox" id="s7" onchange="prepocitat()"> <span id="js7">Strana 7</span><br>vylosované číslo 7</label>
+                            <div class="strana">
+                                <label for="s7" class="checkbox-inline strana"><input type="checkbox" id="s7" onchange="prepocitat()"> <span id="js7">Strana 7</span>
+                                    <br>vylosované číslo 7</label>
+                            </div>
                         </td>
                     </tr>
                     <tr>
                         <td>                            
-                            <div><label id="is1k1" for="s1k1" class="checkbox-inline"><input type="checkbox" id="s1k1" onchange="prepocitat()"> 1. <span id="js1k1">Kandidát s1k1</span></label></div>
-                            <div><label id="is1k2" for="s1k2" class="checkbox-inline"><input type="checkbox" id="s1k2" onchange="prepocitat()"> 2. <span id="js1k2">Kandidát s1k2</span></label></div>
-                            <div><label id="is1k3" for="s1k3" class="checkbox-inline"><input type="checkbox" id="s1k3" onchange="prepocitat()"> 3. <span id="js1k3">Kandidát s1k3</span></label></div>
-                            <div><label id="is1k4" for="s1k4" class="checkbox-inline"><input type="checkbox" id="s1k4" onchange="prepocitat()"> 4. <span id="js1k4">Kandidát s1k4</span></label></div>
-                            <div><label id="is1k5" for="s1k5" class="checkbox-inline"><input type="checkbox" id="s1k5" onchange="prepocitat()"> 5. <span id="js1k5">Kandidát s1k5</span></label></div>
-                            <div><label id="is1k6" for="s1k6" class="checkbox-inline"><input type="checkbox" id="s1k6" onchange="prepocitat()"> 6. <span id="js1k6">Kandidát s1k6</span></label></div>
-                            <div><label id="is1k7" for="s1k7" class="checkbox-inline"><input type="checkbox" id="s1k7" onchange="prepocitat()"> 7. <span id="js1k7">Kandidát s1k7</span></label></div>
-                            <div><label id="is1k8" for="s1k8" class="checkbox-inline"><input type="checkbox" id="s1k8" onchange="prepocitat()"> 8. <span id="js1k8">Kandidát s1k8</span></label></div>
-                            <div><label id="is1k9" for="s1k9" class="checkbox-inline"><input type="checkbox" id="s1k9" onchange="prepocitat()"> 9. <span id="js1k9">Kandidát s1k9</span></label></div>
-                            <div><label id="is1k10" for="s1k10" class="checkbox-inline"><input type="checkbox" id="s1k10" onchange="prepocitat()"> 10. <span id="js1k10">Kandidát s1k10</span></label></div>
-                            <div><label id="is1k11" for="s1k11" class="checkbox-inline"><input type="checkbox" id="s1k11" onchange="prepocitat()"> 11. <span id="js1k11">Kandidát s1k11</span></label></div>
-                            <div><label id="is1k12" for="s1k12" class="checkbox-inline"><input type="checkbox" id="s1k12" onchange="prepocitat()"> 12. <span id="js1k12">Kandidát s1k12</span></label></div>
-                            <div><label id="is1k13" for="s1k13" class="checkbox-inline"><input type="checkbox" id="s1k13" onchange="prepocitat()"> 13. <span id="js1k13">Kandidát s1k13</span></label></div>
-                            <div><label id="is1k14" for="s1k14" class="checkbox-inline"><input type="checkbox" id="s1k14" onchange="prepocitat()"> 14. <span id="js1k14">Kandidát s1k14</span></label></div>
-                            <div><label id="is1k15" for="s1k15" class="checkbox-inline"><input type="checkbox" id="s1k15" onchange="prepocitat()"> 15. <span id="js1k15">Kandidát s1k15</span></label></div>
+                            <div class="kandidat"><label id="is1k1" for="s1k1" class="checkbox-inline"><input type="checkbox" id="s1k1" onchange="prepocitat()"> 1. <span id="js1k1">Kandidát s1k1</span></label></div>
+                            <div class="kandidat"><label id="is1k2" for="s1k2" class="checkbox-inline"><input type="checkbox" id="s1k2" onchange="prepocitat()"> 2. <span id="js1k2">Kandidát s1k2</span></label></div>
+                            <div class="kandidat"><label id="is1k3" for="s1k3" class="checkbox-inline"><input type="checkbox" id="s1k3" onchange="prepocitat()"> 3. <span id="js1k3">Kandidát s1k3</span></label></div>
+                            <div class="kandidat"><label id="is1k4" for="s1k4" class="checkbox-inline"><input type="checkbox" id="s1k4" onchange="prepocitat()"> 4. <span id="js1k4">Kandidát s1k4</span></label></div>
+                            <div class="kandidat"><label id="is1k5" for="s1k5" class="checkbox-inline"><input type="checkbox" id="s1k5" onchange="prepocitat()"> 5. <span id="js1k5">Kandidát s1k5</span></label></div>
+                            <div class="kandidat"><label id="is1k6" for="s1k6" class="checkbox-inline"><input type="checkbox" id="s1k6" onchange="prepocitat()"> 6. <span id="js1k6">Kandidát s1k6</span></label></div>
+                            <div class="kandidat"><label id="is1k7" for="s1k7" class="checkbox-inline"><input type="checkbox" id="s1k7" onchange="prepocitat()"> 7. <span id="js1k7">Kandidát s1k7</span></label></div>
+                            <div class="kandidat"><label id="is1k8" for="s1k8" class="checkbox-inline"><input type="checkbox" id="s1k8" onchange="prepocitat()"> 8. <span id="js1k8">Kandidát s1k8</span></label></div>
+                            <div class="kandidat"><label id="is1k9" for="s1k9" class="checkbox-inline"><input type="checkbox" id="s1k9" onchange="prepocitat()"> 9. <span id="js1k9">Kandidát s1k9</span></label></div>
+                            <div class="kandidat"><label id="is1k10" for="s1k10" class="checkbox-inline"><input type="checkbox" id="s1k10" onchange="prepocitat()"> 10. <span id="js1k10">Kandidát s1k10</span></label></div>
+                            <div class="kandidat"><label id="is1k11" for="s1k11" class="checkbox-inline"><input type="checkbox" id="s1k11" onchange="prepocitat()"> 11. <span id="js1k11">Kandidát s1k11</span></label></div>
+                            <div class="kandidat"><label id="is1k12" for="s1k12" class="checkbox-inline"><input type="checkbox" id="s1k12" onchange="prepocitat()"> 12. <span id="js1k12">Kandidát s1k12</span></label></div>
+                            <div class="kandidat"><label id="is1k13" for="s1k13" class="checkbox-inline"><input type="checkbox" id="s1k13" onchange="prepocitat()"> 13. <span id="js1k13">Kandidát s1k13</span></label></div>
+                            <div class="kandidat"><label id="is1k14" for="s1k14" class="checkbox-inline"><input type="checkbox" id="s1k14" onchange="prepocitat()"> 14. <span id="js1k14">Kandidát s1k14</span></label></div>
+                            <div class="kandidat"><label id="is1k15" for="s1k15" class="checkbox-inline"><input type="checkbox" id="s1k15" onchange="prepocitat()"> 15. <span id="js1k15">Kandidát s1k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is2k1" for="s2k1" class="checkbox-inline"><input type="checkbox" id="s2k1" onchange="prepocitat()"> 1. <span id="js2k1">Kandidát s2k1</span></label></div>
-                            <div><label id="is2k2" for="s2k2" class="checkbox-inline"><input type="checkbox" id="s2k2" onchange="prepocitat()"> 2. <span id="js2k2">Kandidát s2k2</span></label></div>
-                            <div><label id="is2k3" for="s2k3" class="checkbox-inline"><input type="checkbox" id="s2k3" onchange="prepocitat()"> 3. <span id="js2k3">Kandidát s2k3</span></label></div>
-                            <div><label id="is2k4" for="s2k4" class="checkbox-inline"><input type="checkbox" id="s2k4" onchange="prepocitat()"> 4. <span id="js2k4">Kandidát s2k4</span></label></div>
-                            <div><label id="is2k5" for="s2k5" class="checkbox-inline"><input type="checkbox" id="s2k5" onchange="prepocitat()"> 5. <span id="js2k5">Kandidát s2k5</span></label></div>
-                            <div><label id="is2k6" for="s2k6" class="checkbox-inline"><input type="checkbox" id="s2k6" onchange="prepocitat()"> 6. <span id="js2k6">Kandidát s2k6</span></label></div>
-                            <div><label id="is2k7" for="s2k7" class="checkbox-inline"><input type="checkbox" id="s2k7" onchange="prepocitat()"> 7. <span id="js2k7">Kandidát s2k7</span></label></div>
-                            <div><label id="is2k8" for="s2k8" class="checkbox-inline"><input type="checkbox" id="s2k8" onchange="prepocitat()"> 8. <span id="js2k8">Kandidát s2k8</span></label></div>
-                            <div><label id="is2k9" for="s2k9" class="checkbox-inline"><input type="checkbox" id="s2k9" onchange="prepocitat()"> 9. <span id="js2k9">Kandidát s2k9</span></label></div>
-                            <div><label id="is2k10" for="s2k10" class="checkbox-inline"><input type="checkbox" id="s2k10" onchange="prepocitat()"> 10. <span id="js2k10">Kandidát s2k10</span></label></div>
-                            <div><label id="is2k11" for="s2k11" class="checkbox-inline"><input type="checkbox" id="s2k11" onchange="prepocitat()"> 11. <span id="js2k11">Kandidát s2k11</span></label></div>
-                            <div><label id="is2k12" for="s2k12" class="checkbox-inline"><input type="checkbox" id="s2k12" onchange="prepocitat()"> 12. <span id="js2k12">Kandidát s2k12</span></label></div>
-                            <div><label id="is2k13" for="s2k13" class="checkbox-inline"><input type="checkbox" id="s2k13" onchange="prepocitat()"> 13. <span id="js2k13">Kandidát s2k13</span></label></div>
-                            <div><label id="is2k14" for="s2k14" class="checkbox-inline"><input type="checkbox" id="s2k14" onchange="prepocitat()"> 14. <span id="js2k14">Kandidát s2k14</span></label></div>
-                            <div><label id="is2k15" for="s2k15" class="checkbox-inline"><input type="checkbox" id="s2k15" onchange="prepocitat()"> 15. <span id="js2k15">Kandidát s2k15</span></label></div>
+                            <div class="kandidat"><label id="is2k1" for="s2k1" class="checkbox-inline"><input type="checkbox" id="s2k1" onchange="prepocitat()"> 1. <span id="js2k1">Kandidát s2k1</span></label></div>
+                            <div class="kandidat"><label id="is2k2" for="s2k2" class="checkbox-inline"><input type="checkbox" id="s2k2" onchange="prepocitat()"> 2. <span id="js2k2">Kandidát s2k2</span></label></div>
+                            <div class="kandidat"><label id="is2k3" for="s2k3" class="checkbox-inline"><input type="checkbox" id="s2k3" onchange="prepocitat()"> 3. <span id="js2k3">Kandidát s2k3</span></label></div>
+                            <div class="kandidat"><label id="is2k4" for="s2k4" class="checkbox-inline"><input type="checkbox" id="s2k4" onchange="prepocitat()"> 4. <span id="js2k4">Kandidát s2k4</span></label></div>
+                            <div class="kandidat"><label id="is2k5" for="s2k5" class="checkbox-inline"><input type="checkbox" id="s2k5" onchange="prepocitat()"> 5. <span id="js2k5">Kandidát s2k5</span></label></div>
+                            <div class="kandidat"><label id="is2k6" for="s2k6" class="checkbox-inline"><input type="checkbox" id="s2k6" onchange="prepocitat()"> 6. <span id="js2k6">Kandidát s2k6</span></label></div>
+                            <div class="kandidat"><label id="is2k7" for="s2k7" class="checkbox-inline"><input type="checkbox" id="s2k7" onchange="prepocitat()"> 7. <span id="js2k7">Kandidát s2k7</span></label></div>
+                            <div class="kandidat"><label id="is2k8" for="s2k8" class="checkbox-inline"><input type="checkbox" id="s2k8" onchange="prepocitat()"> 8. <span id="js2k8">Kandidát s2k8</span></label></div>
+                            <div class="kandidat"><label id="is2k9" for="s2k9" class="checkbox-inline"><input type="checkbox" id="s2k9" onchange="prepocitat()"> 9. <span id="js2k9">Kandidát s2k9</span></label></div>
+                            <div class="kandidat"><label id="is2k10" for="s2k10" class="checkbox-inline"><input type="checkbox" id="s2k10" onchange="prepocitat()"> 10. <span id="js2k10">Kandidát s2k10</span></label></div>
+                            <div class="kandidat"><label id="is2k11" for="s2k11" class="checkbox-inline"><input type="checkbox" id="s2k11" onchange="prepocitat()"> 11. <span id="js2k11">Kandidát s2k11</span></label></div>
+                            <div class="kandidat"><label id="is2k12" for="s2k12" class="checkbox-inline"><input type="checkbox" id="s2k12" onchange="prepocitat()"> 12. <span id="js2k12">Kandidát s2k12</span></label></div>
+                            <div class="kandidat"><label id="is2k13" for="s2k13" class="checkbox-inline"><input type="checkbox" id="s2k13" onchange="prepocitat()"> 13. <span id="js2k13">Kandidát s2k13</span></label></div>
+                            <div class="kandidat"><label id="is2k14" for="s2k14" class="checkbox-inline"><input type="checkbox" id="s2k14" onchange="prepocitat()"> 14. <span id="js2k14">Kandidát s2k14</span></label></div>
+                            <div class="kandidat"><label id="is2k15" for="s2k15" class="checkbox-inline"><input type="checkbox" id="s2k15" onchange="prepocitat()"> 15. <span id="js2k15">Kandidát s2k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is3k1" for="s3k1" class="checkbox-inline"><input type="checkbox" id="s3k1" onchange="prepocitat()"> 1. <span id="js3k1">Kandidát s3k1</span></label></div>
-                            <div><label id="is3k2" for="s3k2" class="checkbox-inline"><input type="checkbox" id="s3k2" onchange="prepocitat()"> 2. <span id="js3k2">Kandidát s3k2</span></label></div>
-                            <div><label id="is3k3" for="s3k3" class="checkbox-inline"><input type="checkbox" id="s3k3" onchange="prepocitat()"> 3. <span id="js3k3">Kandidát s3k3</span></label></div>
-                            <div><label id="is3k4" for="s3k4" class="checkbox-inline"><input type="checkbox" id="s3k4" onchange="prepocitat()"> 4. <span id="js3k4">Kandidát s3k4</span></label></div>
-                            <div><label id="is3k5" for="s3k5" class="checkbox-inline"><input type="checkbox" id="s3k5" onchange="prepocitat()"> 5. <span id="js3k5">Kandidát s3k5</span></label></div>
-                            <div><label id="is3k6" for="s3k6" class="checkbox-inline"><input type="checkbox" id="s3k6" onchange="prepocitat()"> 6. <span id="js3k6">Kandidát s3k6</span></label></div>
-                            <div><label id="is3k7" for="s3k7" class="checkbox-inline"><input type="checkbox" id="s3k7" onchange="prepocitat()"> 7. <span id="js3k7">Kandidát s3k7</span></label></div>
-                            <div><label id="is3k8" for="s3k8" class="checkbox-inline"><input type="checkbox" id="s3k8" onchange="prepocitat()"> 8. <span id="js3k8">Kandidát s3k8</span></label></div>
-                            <div><label id="is3k9" for="s3k9" class="checkbox-inline"><input type="checkbox" id="s3k9" onchange="prepocitat()"> 9. <span id="js3k9">Kandidát s3k9</span></label></div>
-                            <div><label id="is3k10" for="s3k10" class="checkbox-inline"><input type="checkbox" id="s3k10" onchange="prepocitat()"> 10. <span id="js3k10">Kandidát s3k10</span></label></div>
-                            <div><label id="is3k11" for="s3k11" class="checkbox-inline"><input type="checkbox" id="s3k11" onchange="prepocitat()"> 11. <span id="js3k11">Kandidát s3k11</span></label></div>
-                            <div><label id="is3k12" for="s3k12" class="checkbox-inline"><input type="checkbox" id="s3k12" onchange="prepocitat()"> 12. <span id="js3k12">Kandidát s3k12</span></label></div>
-                            <div><label id="is3k13" for="s3k13" class="checkbox-inline"><input type="checkbox" id="s3k13" onchange="prepocitat()"> 13. <span id="js3k13">Kandidát s3k13</span></label></div>
-                            <div><label id="is3k14" for="s3k14" class="checkbox-inline"><input type="checkbox" id="s3k14" onchange="prepocitat()"> 14. <span id="js3k14">Kandidát s3k14</span></label></div>
-                            <div><label id="is3k15" for="s3k15" class="checkbox-inline"><input type="checkbox" id="s3k15" onchange="prepocitat()"> 15. <span id="js3k15">Kandidát s3k15</span></label></div>
+                            <div class="kandidat"><label id="is3k1" for="s3k1" class="checkbox-inline"><input type="checkbox" id="s3k1" onchange="prepocitat()"> 1. <span id="js3k1">Kandidát s3k1</span></label></div>
+                            <div class="kandidat"><label id="is3k2" for="s3k2" class="checkbox-inline"><input type="checkbox" id="s3k2" onchange="prepocitat()"> 2. <span id="js3k2">Kandidát s3k2</span></label></div>
+                            <div class="kandidat"><label id="is3k3" for="s3k3" class="checkbox-inline"><input type="checkbox" id="s3k3" onchange="prepocitat()"> 3. <span id="js3k3">Kandidát s3k3</span></label></div>
+                            <div class="kandidat"><label id="is3k4" for="s3k4" class="checkbox-inline"><input type="checkbox" id="s3k4" onchange="prepocitat()"> 4. <span id="js3k4">Kandidát s3k4</span></label></div>
+                            <div class="kandidat"><label id="is3k5" for="s3k5" class="checkbox-inline"><input type="checkbox" id="s3k5" onchange="prepocitat()"> 5. <span id="js3k5">Kandidát s3k5</span></label></div>
+                            <div class="kandidat"><label id="is3k6" for="s3k6" class="checkbox-inline"><input type="checkbox" id="s3k6" onchange="prepocitat()"> 6. <span id="js3k6">Kandidát s3k6</span></label></div>
+                            <div class="kandidat"><label id="is3k7" for="s3k7" class="checkbox-inline"><input type="checkbox" id="s3k7" onchange="prepocitat()"> 7. <span id="js3k7">Kandidát s3k7</span></label></div>
+                            <div class="kandidat"><label id="is3k8" for="s3k8" class="checkbox-inline"><input type="checkbox" id="s3k8" onchange="prepocitat()"> 8. <span id="js3k8">Kandidát s3k8</span></label></div>
+                            <div class="kandidat"><label id="is3k9" for="s3k9" class="checkbox-inline"><input type="checkbox" id="s3k9" onchange="prepocitat()"> 9. <span id="js3k9">Kandidát s3k9</span></label></div>
+                            <div class="kandidat"><label id="is3k10" for="s3k10" class="checkbox-inline"><input type="checkbox" id="s3k10" onchange="prepocitat()"> 10. <span id="js3k10">Kandidát s3k10</span></label></div>
+                            <div class="kandidat"><label id="is3k11" for="s3k11" class="checkbox-inline"><input type="checkbox" id="s3k11" onchange="prepocitat()"> 11. <span id="js3k11">Kandidát s3k11</span></label></div>
+                            <div class="kandidat"><label id="is3k12" for="s3k12" class="checkbox-inline"><input type="checkbox" id="s3k12" onchange="prepocitat()"> 12. <span id="js3k12">Kandidát s3k12</span></label></div>
+                            <div class="kandidat"><label id="is3k13" for="s3k13" class="checkbox-inline"><input type="checkbox" id="s3k13" onchange="prepocitat()"> 13. <span id="js3k13">Kandidát s3k13</span></label></div>
+                            <div class="kandidat"><label id="is3k14" for="s3k14" class="checkbox-inline"><input type="checkbox" id="s3k14" onchange="prepocitat()"> 14. <span id="js3k14">Kandidát s3k14</span></label></div>
+                            <div class="kandidat"><label id="is3k15" for="s3k15" class="checkbox-inline"><input type="checkbox" id="s3k15" onchange="prepocitat()"> 15. <span id="js3k15">Kandidát s3k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is4k1" for="s4k1" class="checkbox-inline"><input type="checkbox" id="s4k1" onchange="prepocitat()"> 1. <span id="js4k1">Kandidát s4k1</span></label></div>
-                            <div><label id="is4k2" for="s4k2" class="checkbox-inline"><input type="checkbox" id="s4k2" onchange="prepocitat()"> 2. <span id="js4k2">Kandidát s4k2</span></label></div>
-                            <div><label id="is4k3" for="s4k3" class="checkbox-inline"><input type="checkbox" id="s4k3" onchange="prepocitat()"> 3. <span id="js4k3">Kandidát s4k3</span></label></div>
-                            <div><label id="is4k4" for="s4k4" class="checkbox-inline"><input type="checkbox" id="s4k4" onchange="prepocitat()"> 4. <span id="js4k4">Kandidát s4k4</span></label></div>
-                            <div><label id="is4k5" for="s4k5" class="checkbox-inline"><input type="checkbox" id="s4k5" onchange="prepocitat()"> 5. <span id="js4k5">Kandidát s4k5</span></label></div>
-                            <div><label id="is4k6" for="s4k6" class="checkbox-inline"><input type="checkbox" id="s4k6" onchange="prepocitat()"> 6. <span id="js4k6">Kandidát s4k6</span></label></div>
-                            <div><label id="is4k7" for="s4k7" class="checkbox-inline"><input type="checkbox" id="s4k7" onchange="prepocitat()"> 7. <span id="js4k7">Kandidát s4k7</span></label></div>
-                            <div><label id="is4k8" for="s4k8" class="checkbox-inline"><input type="checkbox" id="s4k8" onchange="prepocitat()"> 8. <span id="js4k8">Kandidát s4k8</span></label></div>
-                            <div><label id="is4k9" for="s4k9" class="checkbox-inline"><input type="checkbox" id="s4k9" onchange="prepocitat()"> 9. <span id="js4k9">Kandidát s4k9</span></label></div>
-                            <div><label id="is4k10" for="s4k10" class="checkbox-inline"><input type="checkbox" id="s4k10" onchange="prepocitat()"> 10. <span id="js4k10">Kandidát s4k10</span></label></div>
-                            <div><label id="is4k11" for="s4k11" class="checkbox-inline"><input type="checkbox" id="s4k11" onchange="prepocitat()"> 11. <span id="js4k11">Kandidát s4k11</span></label></div>
-                            <div><label id="is4k12" for="s4k12" class="checkbox-inline"><input type="checkbox" id="s4k12" onchange="prepocitat()"> 12. <span id="js4k12">Kandidát s4k12</span></label></div>
-                            <div><label id="is4k13" for="s4k13" class="checkbox-inline"><input type="checkbox" id="s4k13" onchange="prepocitat()"> 13. <span id="js4k13">Kandidát s4k13</span></label></div>
-                            <div><label id="is4k14" for="s4k14" class="checkbox-inline"><input type="checkbox" id="s4k14" onchange="prepocitat()"> 14. <span id="js4k14">Kandidát s4k14</span></label></div>
-                            <div><label id="is4k15" for="s4k15" class="checkbox-inline"><input type="checkbox" id="s4k15" onchange="prepocitat()"> 15. <span id="js4k15">Kandidát s4k15</span></label></div>
+                            <div class="kandidat"><label id="is4k1" for="s4k1" class="checkbox-inline"><input type="checkbox" id="s4k1" onchange="prepocitat()"> 1. <span id="js4k1">Kandidát s4k1</span></label></div>
+                            <div class="kandidat"><label id="is4k2" for="s4k2" class="checkbox-inline"><input type="checkbox" id="s4k2" onchange="prepocitat()"> 2. <span id="js4k2">Kandidát s4k2</span></label></div>
+                            <div class="kandidat"><label id="is4k3" for="s4k3" class="checkbox-inline"><input type="checkbox" id="s4k3" onchange="prepocitat()"> 3. <span id="js4k3">Kandidát s4k3</span></label></div>
+                            <div class="kandidat"><label id="is4k4" for="s4k4" class="checkbox-inline"><input type="checkbox" id="s4k4" onchange="prepocitat()"> 4. <span id="js4k4">Kandidát s4k4</span></label></div>
+                            <div class="kandidat"><label id="is4k5" for="s4k5" class="checkbox-inline"><input type="checkbox" id="s4k5" onchange="prepocitat()"> 5. <span id="js4k5">Kandidát s4k5</span></label></div>
+                            <div class="kandidat"><label id="is4k6" for="s4k6" class="checkbox-inline"><input type="checkbox" id="s4k6" onchange="prepocitat()"> 6. <span id="js4k6">Kandidát s4k6</span></label></div>
+                            <div class="kandidat"><label id="is4k7" for="s4k7" class="checkbox-inline"><input type="checkbox" id="s4k7" onchange="prepocitat()"> 7. <span id="js4k7">Kandidát s4k7</span></label></div>
+                            <div class="kandidat"><label id="is4k8" for="s4k8" class="checkbox-inline"><input type="checkbox" id="s4k8" onchange="prepocitat()"> 8. <span id="js4k8">Kandidát s4k8</span></label></div>
+                            <div class="kandidat"><label id="is4k9" for="s4k9" class="checkbox-inline"><input type="checkbox" id="s4k9" onchange="prepocitat()"> 9. <span id="js4k9">Kandidát s4k9</span></label></div>
+                            <div class="kandidat"><label id="is4k10" for="s4k10" class="checkbox-inline"><input type="checkbox" id="s4k10" onchange="prepocitat()"> 10. <span id="js4k10">Kandidát s4k10</span></label></div>
+                            <div class="kandidat"><label id="is4k11" for="s4k11" class="checkbox-inline"><input type="checkbox" id="s4k11" onchange="prepocitat()"> 11. <span id="js4k11">Kandidát s4k11</span></label></div>
+                            <div class="kandidat"><label id="is4k12" for="s4k12" class="checkbox-inline"><input type="checkbox" id="s4k12" onchange="prepocitat()"> 12. <span id="js4k12">Kandidát s4k12</span></label></div>
+                            <div class="kandidat"><label id="is4k13" for="s4k13" class="checkbox-inline"><input type="checkbox" id="s4k13" onchange="prepocitat()"> 13. <span id="js4k13">Kandidát s4k13</span></label></div>
+                            <div class="kandidat"><label id="is4k14" for="s4k14" class="checkbox-inline"><input type="checkbox" id="s4k14" onchange="prepocitat()"> 14. <span id="js4k14">Kandidát s4k14</span></label></div>
+                            <div class="kandidat"><label id="is4k15" for="s4k15" class="checkbox-inline"><input type="checkbox" id="s4k15" onchange="prepocitat()"> 15. <span id="js4k15">Kandidát s4k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is5k1" for="s5k1" class="checkbox-inline"><input type="checkbox" id="s5k1" onchange="prepocitat()"> 1. <span id="js5k1">Kandidát s5k1</span></label></div>
-                            <div><label id="is5k2" for="s5k2" class="checkbox-inline"><input type="checkbox" id="s5k2" onchange="prepocitat()"> 2. <span id="js5k2">Kandidát s5k2</span></label></div>
-                            <div><label id="is5k3" for="s5k3" class="checkbox-inline"><input type="checkbox" id="s5k3" onchange="prepocitat()"> 3. <span id="js5k3">Kandidát s5k3</span></label></div>
-                            <div><label id="is5k4" for="s5k4" class="checkbox-inline"><input type="checkbox" id="s5k4" onchange="prepocitat()"> 4. <span id="js5k4">Kandidát s5k4</span></label></div>
-                            <div><label id="is5k5" for="s5k5" class="checkbox-inline"><input type="checkbox" id="s5k5" onchange="prepocitat()"> 5. <span id="js5k5">Kandidát s5k5</span></label></div>
-                            <div><label id="is5k6" for="s5k6" class="checkbox-inline"><input type="checkbox" id="s5k6" onchange="prepocitat()"> 6. <span id="js5k6">Kandidát s5k6</span></label></div>
-                            <div><label id="is5k7" for="s5k7" class="checkbox-inline"><input type="checkbox" id="s5k7" onchange="prepocitat()"> 7. <span id="js5k7">Kandidát s5k7</span></label></div>
-                            <div><label id="is5k8" for="s5k8" class="checkbox-inline"><input type="checkbox" id="s5k8" onchange="prepocitat()"> 8. <span id="js5k8">Kandidát s5k8</span></label></div>
-                            <div><label id="is5k9" for="s5k9" class="checkbox-inline"><input type="checkbox" id="s5k9" onchange="prepocitat()"> 9. <span id="js5k9">Kandidát s5k9</span></label></div>
-                            <div><label id="is5k10" for="s5k10" class="checkbox-inline"><input type="checkbox" id="s5k10" onchange="prepocitat()"> 10. <span id="js5k10">Kandidát s5k10</span></label></div>
-                            <div><label id="is5k11" for="s5k11" class="checkbox-inline"><input type="checkbox" id="s5k11" onchange="prepocitat()"> 11. <span id="js5k11">Kandidát s5k11</span></label></div>
-                            <div><label id="is5k12" for="s5k12" class="checkbox-inline"><input type="checkbox" id="s5k12" onchange="prepocitat()"> 12. <span id="js5k12">Kandidát s5k12</span></label></div>
-                            <div><label id="is5k13" for="s5k13" class="checkbox-inline"><input type="checkbox" id="s5k13" onchange="prepocitat()"> 13. <span id="js5k13">Kandidát s5k13</span></label></div>
-                            <div><label id="is5k14" for="s5k14" class="checkbox-inline"><input type="checkbox" id="s5k14" onchange="prepocitat()"> 14. <span id="js5k14">Kandidát s5k14</span></label></div>
-                            <div><label id="is5k15" for="s5k15" class="checkbox-inline"><input type="checkbox" id="s5k15" onchange="prepocitat()"> 15. <span id="js5k15">Kandidát s5k15</span></label></div>
+                            <div class="kandidat"><label id="is5k1" for="s5k1" class="checkbox-inline"><input type="checkbox" id="s5k1" onchange="prepocitat()"> 1. <span id="js5k1">Kandidát s5k1</span></label></div>
+                            <div class="kandidat"><label id="is5k2" for="s5k2" class="checkbox-inline"><input type="checkbox" id="s5k2" onchange="prepocitat()"> 2. <span id="js5k2">Kandidát s5k2</span></label></div>
+                            <div class="kandidat"><label id="is5k3" for="s5k3" class="checkbox-inline"><input type="checkbox" id="s5k3" onchange="prepocitat()"> 3. <span id="js5k3">Kandidát s5k3</span></label></div>
+                            <div class="kandidat"><label id="is5k4" for="s5k4" class="checkbox-inline"><input type="checkbox" id="s5k4" onchange="prepocitat()"> 4. <span id="js5k4">Kandidát s5k4</span></label></div>
+                            <div class="kandidat"><label id="is5k5" for="s5k5" class="checkbox-inline"><input type="checkbox" id="s5k5" onchange="prepocitat()"> 5. <span id="js5k5">Kandidát s5k5</span></label></div>
+                            <div class="kandidat"><label id="is5k6" for="s5k6" class="checkbox-inline"><input type="checkbox" id="s5k6" onchange="prepocitat()"> 6. <span id="js5k6">Kandidát s5k6</span></label></div>
+                            <div class="kandidat"><label id="is5k7" for="s5k7" class="checkbox-inline"><input type="checkbox" id="s5k7" onchange="prepocitat()"> 7. <span id="js5k7">Kandidát s5k7</span></label></div>
+                            <div class="kandidat"><label id="is5k8" for="s5k8" class="checkbox-inline"><input type="checkbox" id="s5k8" onchange="prepocitat()"> 8. <span id="js5k8">Kandidát s5k8</span></label></div>
+                            <div class="kandidat"><label id="is5k9" for="s5k9" class="checkbox-inline"><input type="checkbox" id="s5k9" onchange="prepocitat()"> 9. <span id="js5k9">Kandidát s5k9</span></label></div>
+                            <div class="kandidat"><label id="is5k10" for="s5k10" class="checkbox-inline"><input type="checkbox" id="s5k10" onchange="prepocitat()"> 10. <span id="js5k10">Kandidát s5k10</span></label></div>
+                            <div class="kandidat"><label id="is5k11" for="s5k11" class="checkbox-inline"><input type="checkbox" id="s5k11" onchange="prepocitat()"> 11. <span id="js5k11">Kandidát s5k11</span></label></div>
+                            <div class="kandidat"><label id="is5k12" for="s5k12" class="checkbox-inline"><input type="checkbox" id="s5k12" onchange="prepocitat()"> 12. <span id="js5k12">Kandidát s5k12</span></label></div>
+                            <div class="kandidat"><label id="is5k13" for="s5k13" class="checkbox-inline"><input type="checkbox" id="s5k13" onchange="prepocitat()"> 13. <span id="js5k13">Kandidát s5k13</span></label></div>
+                            <div class="kandidat"><label id="is5k14" for="s5k14" class="checkbox-inline"><input type="checkbox" id="s5k14" onchange="prepocitat()"> 14. <span id="js5k14">Kandidát s5k14</span></label></div>
+                            <div class="kandidat"><label id="is5k15" for="s5k15" class="checkbox-inline"><input type="checkbox" id="s5k15" onchange="prepocitat()"> 15. <span id="js5k15">Kandidát s5k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is6k1" for="s6k1" class="checkbox-inline"><input type="checkbox" id="s6k1" onchange="prepocitat()"> 1. <span id="js6k1">Kandidát s6k1</span></label></div>
-                            <div><label id="is6k2" for="s6k2" class="checkbox-inline"><input type="checkbox" id="s6k2" onchange="prepocitat()"> 2. <span id="js6k2">Kandidát s6k2</span></label></div>
-                            <div><label id="is6k3" for="s6k3" class="checkbox-inline"><input type="checkbox" id="s6k3" onchange="prepocitat()"> 3. <span id="js6k3">Kandidát s6k3</span></label></div>
-                            <div><label id="is6k4" for="s6k4" class="checkbox-inline"><input type="checkbox" id="s6k4" onchange="prepocitat()"> 4. <span id="js6k4">Kandidát s6k4</span></label></div>
-                            <div><label id="is6k5" for="s6k5" class="checkbox-inline"><input type="checkbox" id="s6k5" onchange="prepocitat()"> 5. <span id="js6k5">Kandidát s6k5</span></label></div>
-                            <div><label id="is6k6" for="s6k6" class="checkbox-inline"><input type="checkbox" id="s6k6" onchange="prepocitat()"> 6. <span id="js6k6">Kandidát s6k6</span></label></div>
-                            <div><label id="is6k7" for="s6k7" class="checkbox-inline"><input type="checkbox" id="s6k7" onchange="prepocitat()"> 7. <span id="js6k7">Kandidát s6k7</span></label></div>
-                            <div><label id="is6k8" for="s6k8" class="checkbox-inline"><input type="checkbox" id="s6k8" onchange="prepocitat()"> 8. <span id="js6k8">Kandidát s6k8</span></label></div>
-                            <div><label id="is6k9" for="s6k9" class="checkbox-inline"><input type="checkbox" id="s6k9" onchange="prepocitat()"> 9. <span id="js6k9">Kandidát s6k9</span></label></div>
-                            <div><label id="is6k10" for="s6k10" class="checkbox-inline"><input type="checkbox" id="s6k10" onchange="prepocitat()"> 10. <span id="js6k10">Kandidát s6k10</span></label></div>
-                            <div><label id="is6k11" for="s6k11" class="checkbox-inline"><input type="checkbox" id="s6k11" onchange="prepocitat()"> 11. <span id="js6k11">Kandidát s6k11</span></label></div>
-                            <div><label id="is6k12" for="s6k12" class="checkbox-inline"><input type="checkbox" id="s6k12" onchange="prepocitat()"> 12. <span id="js6k12">Kandidát s6k12</span></label></div>
-                            <div><label id="is6k13" for="s6k13" class="checkbox-inline"><input type="checkbox" id="s6k13" onchange="prepocitat()"> 13. <span id="js6k13">Kandidát s6k13</span></label></div>
-                            <div><label id="is6k14" for="s6k14" class="checkbox-inline"><input type="checkbox" id="s6k14" onchange="prepocitat()"> 14. <span id="js6k14">Kandidát s6k14</span></label></div>
-                            <div><label id="is6k15" for="s6k15" class="checkbox-inline"><input type="checkbox" id="s6k15" onchange="prepocitat()"> 15. <span id="js6k15">Kandidát s6k15</span></label></div>
+                            <div class="kandidat"><label id="is6k1" for="s6k1" class="checkbox-inline"><input type="checkbox" id="s6k1" onchange="prepocitat()"> 1. <span id="js6k1">Kandidát s6k1</span></label></div>
+                            <div class="kandidat"><label id="is6k2" for="s6k2" class="checkbox-inline"><input type="checkbox" id="s6k2" onchange="prepocitat()"> 2. <span id="js6k2">Kandidát s6k2</span></label></div>
+                            <div class="kandidat"><label id="is6k3" for="s6k3" class="checkbox-inline"><input type="checkbox" id="s6k3" onchange="prepocitat()"> 3. <span id="js6k3">Kandidát s6k3</span></label></div>
+                            <div class="kandidat"><label id="is6k4" for="s6k4" class="checkbox-inline"><input type="checkbox" id="s6k4" onchange="prepocitat()"> 4. <span id="js6k4">Kandidát s6k4</span></label></div>
+                            <div class="kandidat"><label id="is6k5" for="s6k5" class="checkbox-inline"><input type="checkbox" id="s6k5" onchange="prepocitat()"> 5. <span id="js6k5">Kandidát s6k5</span></label></div>
+                            <div class="kandidat"><label id="is6k6" for="s6k6" class="checkbox-inline"><input type="checkbox" id="s6k6" onchange="prepocitat()"> 6. <span id="js6k6">Kandidát s6k6</span></label></div>
+                            <div class="kandidat"><label id="is6k7" for="s6k7" class="checkbox-inline"><input type="checkbox" id="s6k7" onchange="prepocitat()"> 7. <span id="js6k7">Kandidát s6k7</span></label></div>
+                            <div class="kandidat"><label id="is6k8" for="s6k8" class="checkbox-inline"><input type="checkbox" id="s6k8" onchange="prepocitat()"> 8. <span id="js6k8">Kandidát s6k8</span></label></div>
+                            <div class="kandidat"><label id="is6k9" for="s6k9" class="checkbox-inline"><input type="checkbox" id="s6k9" onchange="prepocitat()"> 9. <span id="js6k9">Kandidát s6k9</span></label></div>
+                            <div class="kandidat"><label id="is6k10" for="s6k10" class="checkbox-inline"><input type="checkbox" id="s6k10" onchange="prepocitat()"> 10. <span id="js6k10">Kandidát s6k10</span></label></div>
+                            <div class="kandidat"><label id="is6k11" for="s6k11" class="checkbox-inline"><input type="checkbox" id="s6k11" onchange="prepocitat()"> 11. <span id="js6k11">Kandidát s6k11</span></label></div>
+                            <div class="kandidat"><label id="is6k12" for="s6k12" class="checkbox-inline"><input type="checkbox" id="s6k12" onchange="prepocitat()"> 12. <span id="js6k12">Kandidát s6k12</span></label></div>
+                            <div class="kandidat"><label id="is6k13" for="s6k13" class="checkbox-inline"><input type="checkbox" id="s6k13" onchange="prepocitat()"> 13. <span id="js6k13">Kandidát s6k13</span></label></div>
+                            <div class="kandidat"><label id="is6k14" for="s6k14" class="checkbox-inline"><input type="checkbox" id="s6k14" onchange="prepocitat()"> 14. <span id="js6k14">Kandidát s6k14</span></label></div>
+                            <div class="kandidat"><label id="is6k15" for="s6k15" class="checkbox-inline"><input type="checkbox" id="s6k15" onchange="prepocitat()"> 15. <span id="js6k15">Kandidát s6k15</span></label></div>
                         </td>
                         <td>                            
-                            <div><label id="is7k1" for="s7k1" class="checkbox-inline"><input type="checkbox" id="s7k1" onchange="prepocitat()"> 1. <span id="js7k1">Kandidát s7k1</span></label></div>
-                            <div><label id="is7k2" for="s7k2" class="checkbox-inline"><input type="checkbox" id="s7k2" onchange="prepocitat()"> 2. <span id="js7k2">Kandidát s7k2</span></label></div>
-                            <div><label id="is7k3" for="s7k3" class="checkbox-inline"><input type="checkbox" id="s7k3" onchange="prepocitat()"> 3. <span id="js7k3">Kandidát s7k3</span></label></div>
-                            <div><label id="is7k4" for="s7k4" class="checkbox-inline"><input type="checkbox" id="s7k4" onchange="prepocitat()"> 4. <span id="js7k4">Kandidát s7k4</span></label></div>
-                            <div><label id="is7k5" for="s7k5" class="checkbox-inline"><input type="checkbox" id="s7k5" onchange="prepocitat()"> 5. <span id="js7k5">Kandidát s7k5</span></label></div>
-                            <div><label id="is7k6" for="s7k6" class="checkbox-inline"><input type="checkbox" id="s7k6" onchange="prepocitat()"> 6. <span id="js7k6">Kandidát s7k6</span></label></div>
-                            <div><label id="is7k7" for="s7k7" class="checkbox-inline"><input type="checkbox" id="s7k7" onchange="prepocitat()"> 7. <span id="js7k7">Kandidát s7k7</span></label></div>
-                            <div><label id="is7k8" for="s7k8" class="checkbox-inline"><input type="checkbox" id="s7k8" onchange="prepocitat()"> 8. <span id="js7k8">Kandidát s7k8</span></label></div>
-                            <div><label id="is7k9" for="s7k9" class="checkbox-inline"><input type="checkbox" id="s7k9" onchange="prepocitat()"> 9. <span id="js7k9">Kandidát s7k9</span></label></div>
-                            <div><label id="is7k10" for="s7k10" class="checkbox-inline"><input type="checkbox" id="s7k10" onchange="prepocitat()"> 10. <span id="js7k10">Kandidát s7k10</span></label></div>
-                            <div><label id="is7k11" for="s7k11" class="checkbox-inline"><input type="checkbox" id="s7k11" onchange="prepocitat()"> 11. <span id="js7k11">Kandidát s7k11</span></label></div>
-                            <div><label id="is7k12" for="s7k12" class="checkbox-inline"><input type="checkbox" id="s7k12" onchange="prepocitat()"> 12. <span id="js7k12">Kandidát s7k12</span></label></div>
-                            <div><label id="is7k13" for="s7k13" class="checkbox-inline"><input type="checkbox" id="s7k13" onchange="prepocitat()"> 13. <span id="js7k13">Kandidát s7k13</span></label></div>
-                            <div><label id="is7k14" for="s7k14" class="checkbox-inline"><input type="checkbox" id="s7k14" onchange="prepocitat()"> 14. <span id="js7k14">Kandidát s7k14</span></label></div>
-                            <div><label id="is7k15" for="s7k15" class="checkbox-inline"><input type="checkbox" id="s7k15" onchange="prepocitat()"> 15. <span id="js7k15">Kandidát s7k15</span></label></div>
+                            <div class="kandidat"><label id="is7k1" for="s7k1" class="checkbox-inline"><input type="checkbox" id="s7k1" onchange="prepocitat()"> 1. <span id="js7k1">Kandidát s7k1</span></label></div>
+                            <div class="kandidat"><label id="is7k2" for="s7k2" class="checkbox-inline"><input type="checkbox" id="s7k2" onchange="prepocitat()"> 2. <span id="js7k2">Kandidát s7k2</span></label></div>
+                            <div class="kandidat"><label id="is7k3" for="s7k3" class="checkbox-inline"><input type="checkbox" id="s7k3" onchange="prepocitat()"> 3. <span id="js7k3">Kandidát s7k3</span></label></div>
+                            <div class="kandidat"><label id="is7k4" for="s7k4" class="checkbox-inline"><input type="checkbox" id="s7k4" onchange="prepocitat()"> 4. <span id="js7k4">Kandidát s7k4</span></label></div>
+                            <div class="kandidat"><label id="is7k5" for="s7k5" class="checkbox-inline"><input type="checkbox" id="s7k5" onchange="prepocitat()"> 5. <span id="js7k5">Kandidát s7k5</span></label></div>
+                            <div class="kandidat"><label id="is7k6" for="s7k6" class="checkbox-inline"><input type="checkbox" id="s7k6" onchange="prepocitat()"> 6. <span id="js7k6">Kandidát s7k6</span></label></div>
+                            <div class="kandidat"><label id="is7k7" for="s7k7" class="checkbox-inline"><input type="checkbox" id="s7k7" onchange="prepocitat()"> 7. <span id="js7k7">Kandidát s7k7</span></label></div>
+                            <div class="kandidat"><label id="is7k8" for="s7k8" class="checkbox-inline"><input type="checkbox" id="s7k8" onchange="prepocitat()"> 8. <span id="js7k8">Kandidát s7k8</span></label></div>
+                            <div class="kandidat"><label id="is7k9" for="s7k9" class="checkbox-inline"><input type="checkbox" id="s7k9" onchange="prepocitat()"> 9. <span id="js7k9">Kandidát s7k9</span></label></div>
+                            <div class="kandidat"><label id="is7k10" for="s7k10" class="checkbox-inline"><input type="checkbox" id="s7k10" onchange="prepocitat()"> 10. <span id="js7k10">Kandidát s7k10</span></label></div>
+                            <div class="kandidat"><label id="is7k11" for="s7k11" class="checkbox-inline"><input type="checkbox" id="s7k11" onchange="prepocitat()"> 11. <span id="js7k11">Kandidát s7k11</span></label></div>
+                            <div class="kandidat"><label id="is7k12" for="s7k12" class="checkbox-inline"><input type="checkbox" id="s7k12" onchange="prepocitat()"> 12. <span id="js7k12">Kandidát s7k12</span></label></div>
+                            <div class="kandidat"><label id="is7k13" for="s7k13" class="checkbox-inline"><input type="checkbox" id="s7k13" onchange="prepocitat()"> 13. <span id="js7k13">Kandidát s7k13</span></label></div>
+                            <div class="kandidat"><label id="is7k14" for="s7k14" class="checkbox-inline"><input type="checkbox" id="s7k14" onchange="prepocitat()"> 14. <span id="js7k14">Kandidát s7k14</span></label></div>
+                            <div class="kandidat"><label id="is7k15" for="s7k15" class="checkbox-inline"><input type="checkbox" id="s7k15" onchange="prepocitat()"> 15. <span id="js7k15">Kandidát s7k15</span></label></div>
                         </td>
                     </tr>
                     <tr class="skryte" id="radekCelkem">
@@ -233,24 +254,18 @@
             </div>
 
             <div id="vysledky">
-                <div id="vysledkyPlatnost">
-                    Zde se zobrazí výsledky, až něco oklikáte.
+                <div id="vysledkyPlatnost" class="alert alert-info">
+                    Zde se zobrazí výsledky.
                 </div>
-                <div id="vysledkyStrany">
-                </div>
+                <div id="vysledkyStrany"></div>
 
-                <div id="vysledkyDuvod">
-                </div>
+                <div id="vysledkyDuvod"></div>
 
-                <div id="vysledkyKandidati">
-                </div>
+                <div id="vysledkyKandidati"></div>
 
-                <div id="vysledkyVyuziti">
-                </div>
+                <div id="vysledkyVyuziti"></div>
 
-                <div id="vysledkyPoznamka">
-                </div>
-
+                <div id="vysledkyPoznamka"></div>
             </div>
 
             <div id="patka">
@@ -259,8 +274,8 @@
                     <a href="http://volby.rovnou.cz/zakon-491-2001sb-par-40.html">§ 40 zákona č. 491/2001Sb</a> popisuje vyhodnocování
                     a <a href="http://volby.rovnou.cz/zakon-491-2001sb-par-41.html">§ 41 zákona č. 491/2001Sb</a> jednak určuje platnost a hlavně popisuje, že se ignorují křížky kandidátů zaškrtnuté strany.
                 </p>
-                <p>Tato aplikace <a href="http://volby.rovnou.cz/">volby.rovnou.cz</a> nesmí být použita členy volební komise pro vyhodnocování lístků (zakazuje to zákon č. 491/2001Sb, §42 čl. 4). </p>
-                <p>Tuto variantu simulátoru hlasovacího lístku pro volby do zastupitelstva města <a href="http://www.pribyslav.cz/">Přibyslav</a> vytvořil <a href="http://henzl.info/">Vašek Henzl</a> na základě aplikace <a href="http://volby.rovnou.cz">volby.rovnou.cz</a> od Dušana Janovského.</p>
+                <p>Tato aplikace nesmí být použita členy volební komise pro vyhodnocování lístků (zakazuje to zákon č. 491/2001Sb, §42 čl. 4).</p>
+                <p>Simulátor hlasovacího lístku pro volby do zastupitelstva města <a href="http://www.pribyslav.cz/">Přibyslav</a> vytvořil <a href="http://henzl.info/">Vašek Henzl</a> na základě aplikace <a href="http://volby.rovnou.cz">volby.rovnou.cz</a> od Dušana Janovského.</p>
             </div>
 
         </div>

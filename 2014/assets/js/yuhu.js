@@ -359,7 +359,7 @@ function vypocitatStrany(){
         hlaseni.strany += " <br><u onclick='document.getElementById(\"radekCelkem\").className = \"skryte\";'>Dole v tabulce skrýt</u>."
     }
     // využití hlasů
-    hlaseni.vyuziti += "<br>Volič využil "+ sklonujHlasy(vyuzitoHlasu) + ", tedy " + Math.floor(100*vyuzitoHlasu/mandatu) + " % svých hlasů. ";
+    hlaseni.vyuziti += "Volič využil "+ sklonujHlasy(vyuzitoHlasu) + ", tedy " + Math.floor(100*vyuzitoHlasu/mandatu) + " % svých hlasů. ";
 
     // vyplnění volebního zisku do spodního řádku tabulky celkemHlasu
     for(var strana in hlasyStranam){
@@ -376,10 +376,18 @@ function vypsatVysledek(){
     document.getElementById("vysledkyPoznamka").innerHTML = hlaseni.poznamka;
     document.getElementById("vysledkyDuvod").innerHTML = hlaseni.duvod;
 
+
+    document.getElementById("vysledkyPlatnost").className = jePlatny ? "alert alert-success" : "alert alert-danger";
+    document.getElementById("vysledkyStrany").className = hlaseni.strany ? "alert alert-info" : "";
+    document.getElementById("vysledkyKandidati").className = hlaseni.kandidati ? "alert alert-info" : "";
+    document.getElementById("vysledkyVyuziti").className = hlaseni.vyuziti ? vyuzitoHlasu == mandatu ? "alert alert-success" : "alert alert-warning" : "";
+    document.getElementById("vysledkyPoznamka").className = hlaseni.poznamka ? "alert alert-warning" : "";
+    document.getElementById("vysledkyDuvod").className = hlaseni.duvod ? "alert alert-warning" : "";
+
     // odbarveni vseho
     for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
         prvek = document.getElementById("i"+"s"+strana+"k"+kandidat).parentElement;
-        prvek.className = "";
+        prvek.className = "kandidat";
     }
 
     if (jePlatny){
@@ -387,7 +395,7 @@ function vypsatVysledek(){
         // obarveni kandidatu
         for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
             prvek = document.getElementById("i"+"s"+strana+"k"+kandidat).parentElement;
-            if(poleKandidatu[strana][kandidat]) prvek.className = "dostalHlas";
+            if(poleKandidatu[strana][kandidat]) prvek.className = "kandidat dostalHlas";
         }
     }
     if(!jePlatny){

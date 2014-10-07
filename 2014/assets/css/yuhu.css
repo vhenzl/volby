@@ -1,100 +1,88 @@
-﻿        /*#listek, #vysledky {
-            font-family: arial, helvetica, sans-serif;
-        }*/
-        /*#listek {font-size: small;}*/
-        td {
-            vertical-align: top;
-            padding: 4px;
-        }
+﻿table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+        
+td {
+    vertical-align: top;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
 
-        table {
-            border-collapse: collapse;
-            border: 1px solid black;
-        }
+#listek h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: small;
+    font-weight: normal;
+}
 
-        td {
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-        }
+#listek p {
+    margin: 0;
+}
 
-        #listek h2 {
-            text-align: center;
-            margin-top: 0px;
-            margin-bottom: 0px;
-            font-size: small;
-            font-weight: normal;
-        }
+#tabulkaListku {
+    font-size: 12px;
+}
 
-        #listek p {
-            margin: 0px;
-        }
+div#patka {
+    border-top: 1px dotted gray;
+    padding-top: 20px;
+}
 
-        /* upravit podle poctu stran */
-        /* #listek td {font-size: 12px;} */
-        /* div#listek {width: 1200px;}*/
+div#listek {
+    border: 1px solid gray;
+    padding: 1em;
+    background-color: #eeeeee;
+}
 
-        /*div {
-            margin-top: 1em;
-        }*/
+div#vysledky {
+    margin-top: 20px;
+}
 
-            div#patka {
-                border-top: 1px dotted gray;
-            }
+label.strana span {
+    font-weight: bold;
+}
 
-            div#listek {
-                border: 1px solid gray;
-                padding: 1em;
-                background-color: #eeeeee;
-            }
+u {
+    cursor: pointer;
+}
 
-            div#vysledky {
-                min-height: 12em;
-            }
-/*
-        input {
-            vertical-align: middle;
-        }
+.strana {
+    margin: 2px;
+}
 
-        label {
-            display: block;
-            text-indent: -1em;
-            padding-left: 1em;
-            margin: 0px;
-        }
+.kandidat {
+    padding: 0 4px 4px 4px;
+}
 
-            label input {
-                height: 1.5em;
-                width: 1.5em;
-            }
+.dostalHlas {
+    background-image: -webkit-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
+    background-image: -o-linear-gradient(top,#dff0d8 0,#c8e5bc 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#dff0d8),to(#c8e5bc));
+    background-image: linear-gradient(to bottom,#dff0d8 0,#c8e5bc 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdff0d8', endColorstr='#ffc8e5bc', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #b2dba1;
+}
 
-            label.strana input {
-                height: 2em;
-                width: 2em;
-            }
-*/
-            label.strana span {
-                font-weight: bold;
-            }
+.neplatnyListek {
+    background-image: -webkit-linear-gradient(top,#f2dede 0,#e7c3c3 100%);
+    background-image: -o-linear-gradient(top,#f2dede 0,#e7c3c3 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#f2dede),to(#e7c3c3));
+    background-image: linear-gradient(to bottom,#f2dede 0,#e7c3c3 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2dede', endColorstr='#ffe7c3c3', GradientType=0);
+    background-repeat: repeat-x;
+    border-color: #dca7a7;
+}
 
-        u {
-            cursor: pointer;
-        }
+tr.skryte {
+    display: none;
+}
 
-        .dostalHlas {
-            background-color: yellow;
-        }
+tr.odkryte {
+    display: table-row;
+}
 
-        .neplatnyListek {
-            background-color: #ffcccc;
-        }
-
-        tr.skryte {
-            display: none;
-        }
-
-        tr.odkryte {
-            display: table-row;
-        }
-
-        .celkem {
-        }
+.celkem {
+}
