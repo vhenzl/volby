@@ -29,3 +29,18 @@ CREATE TABLE `People` (
 ALTER TABLE `Candidates`
 ADD `PersonId` int NULL,
 ADD FOREIGN KEY (`PersonId`) REFERENCES `People` (`Id`) ON DELETE SET NULL;
+
+
+CREATE TABLE `Elections` (
+  `Year` year NOT NULL PRIMARY KEY,
+  `Members` int NOT NULL,
+  `Electors` int NOT NULL,
+  `Came` int NOT NULL,
+  `Voted` int NOT NULL,
+  `TotalVotes` int NOT NULL
+);
+
+
+ALTER TABLE `CandidateLists`
+ADD `TotalVotes` int NULL,
+ADD `Mandates` int NULL;
