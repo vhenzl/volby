@@ -29,6 +29,42 @@
         stroke: #000;
         stroke-width: .5px;
     }
+
+    /* bar */
+    .bar {
+        fill: steelblue;
+    }
+
+    .bar:hover {
+        fill: brown;
+    }
+
+    .axis {
+        font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .x.axis path {
+        display: none;
+    }
+
+    /**/
+
+    .x.axis path {
+      display: none;
+    }
+
+    .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+    }
     </style>
 </head>
 
@@ -55,9 +91,38 @@
     </div>
 
     <div class="container">
-    
+
         <div class="volby-template">
-   
+
+            <h1>Kandidující strany a jejich kandidáti</h1>
+
+            <p>Pojďmě se podívat, kdo se v letošních komunálních volbách v Přibyslavi úchází o přízeň voličů.</p>
+
+            <div class="alert alert-warning">
+                <h4>Upozornění</h4>
+                <p>Prezentovaná data pocházejí z údajů <a href="http://www.czso.cz/"><abbr title="Český statistický úřad">ČSÚ</abbr></a> ze stránek <a href="http://volby.cz/">volby.cz</a>.</p>
+                <p>
+                    Data byla zpracována částečně strojově, z části ručně. Spárování kandidátů mezi jednotlivými volbami bylo provedeno automaticky na základě shody jména a věku, případně upraveno manuálně.
+                    V případě např. změny příjmení tak ke spárování nemuselo dojít. Pokud takovouto nesrovnalost objevíte, dejte mi prosím vědět.
+                </p>
+            </div>
+
+            <p>
+                V tabulkách a grafech jsou pro politické strany použity ustálené zkratky <abbr title="ANO 2011">ANO</abbr>, <abbr title="Česká strana sociálně demokratická'">ČSSD</abbr>,
+                <abbr title="Křesťanská a demokratická unie - Československá strana lidová">KDU-ČSL</abbr>, <abbr title="Komunistická strana Čech a Moravy">KSČM</abbr>
+                a <abbr title="Občanská demokratická strana">ODS</abbr>.
+                Pro označení kandidátek sdružení nezávislých kandidátů jsou použity <abbr title="NEZÁVISLÍ PRO PŘIBYSLAV">NPP</abbr> pro <i>NEZÁVISLÍ PRO PŘIBYSLAV</i>
+                a <abbr title="PŘIBYSLAV 2014">P2014</abbr> pro <i>PŘIBYSLAV 2014</i>.
+                <i>Sdružení nezávislých kandidátů Přibyslav</i> z voleb 2010 je označeno jako <abbr title="Sdružení nezávislých kandidátů Přibyslav">SNKP</abbr>.
+            </p>
+
+            <section>
+                <h2>Věk kandidátů</h2>
+
+                <div id="ageOfCandidatesByYears"></div>
+                <div id="maxMinAgeByYear"></div>
+            </section>
+
             <div id="circle"></div>
 
             <div id="patka">
@@ -73,6 +138,13 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
     <script src="./assets/js/d3.v3.min.js"></script>
+    <script src="assets/js/underscore-min.js"></script>
+
+    <!-- -->
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/candidates-data.js"></script>
+    <script src="./assets/js/bars.js"></script>
+    <script src="./assets/js/lines.js"></script>
     <script src="./assets/js/circle.js"></script>
 
     <!-- Google Analytics -->
