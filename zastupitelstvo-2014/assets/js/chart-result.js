@@ -80,7 +80,7 @@
             .attr("height", function (d, i) { return height - yScale(yValueSelector(d, i)); });
 
         d3.selectAll(elementId + ' .mode-switch input').on('change', onModeChange);
-        d3.select(window).on('resize', resize);
+        $(window).on('resize', resize);
 
         function resize() {
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right;

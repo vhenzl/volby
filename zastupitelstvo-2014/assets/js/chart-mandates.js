@@ -4,7 +4,7 @@
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right,
             height = h - margin.top - margin.bottom,
             yTopSpace = 1.1,
-            barPadding = .2;
+            barPadding = .3;
 
         function xSelector(d, i) {
             return d.Order;
@@ -80,10 +80,10 @@
             .attr("stroke-width", 1)
             .attr("stroke", "black");
 
-        d3.select(window).on('resize', resize);
+        $(window).on('resize', resize);
 
         function resize() {
-            width = getElementWidth() - margin.left - margin.right;
+            width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right;
 
             xScale.rangeRoundBands([0, width], .2);
 
@@ -91,6 +91,11 @@
 
             bar.attr('x', function (d, e) { return xScale(xSelector(d, e)); })
                 .attr('width', xScale.rangeBand());
+
+            border.attr('x1', function (d, e) { return xScale(16) - 1 - (xScale.rangeBand() * (1 + barPadding) - xScale.rangeBand()) / 2; })
+                .attr("y1", 0)
+                .attr("x2", function (d, e) { return xScale(16) - 1 - (xScale.rangeBand() * (1 + barPadding) - xScale.rangeBand()) / 2; })
+                .attr("y2", height);
 
             chart.select('.x.axis').call(xAxis);
         }
