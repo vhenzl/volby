@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Vašek Henzl, vasek.henzl@gmail.com">
+    <link rel="canonical" href="http://volby.pribyslavsko.info/zastupitelstvo-2014/vysledky-voleb">
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Výsledky voleb | Komunální volby Přibyslav 2014</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="./assets/js/libs/html5shiv.min.js"></script>
+        <script src="./assets/js/libs/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .chart-placeholder {
+            position: relative;
+        }
+       .bar-chart .axis path,
+       .bar-chart .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+       .chart-placeholder .mode-switch {
+           position:absolute; 
+           top: 10px; 
+           right: 10px;
+       }
+
+       .chart line.border {
+            fill: none;
+            stroke: #808080;
+            shape-rendering: crispEdges;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Navigace</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Komunální volby 2014</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./simulator-hlasovaciho-listu">Simulátor hlasovacího lístku</a></li>
+                    <li><a href="./strany-a-kandidati">Strany a kandidáti</a></li>
+                    <li class="active"><a href="./vysledky-voleb">Výsledky voleb</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="volby-template">
+
+            <div class="page-header">
+                <h1>Výsledky voleb</h1>
+            </div>
+
+            <div class="alert alert-warning">
+                <h4>Upozornění</h4>
+                <p>Prezentovaná data pocházejí z údajů <a href="http://www.czso.cz/"><abbr title="Český statistický úřad">ČSÚ</abbr></a> ze stránek <a href="http://volby.cz/">volby.cz</a>.</p>
+                <p>
+                    Data byla zpracována částečně strojově, z části ručně. Spárování kandidátů mezi jednotlivými volbami bylo provedeno automaticky na základě shody jména a věku, případně upraveno manuálně.
+                    V případě např. změny příjmení tak ke spárování nemuselo dojít. Pokud takovouto nesrovnalost objevíte, dejte mi prosím vědět.
+                </p>
+            </div>
+
+            <p>
+                V tabulkách a grafech jsou pro politické strany použity ustálené zkratky <abbr title="ANO 2011">ANO</abbr>, <abbr title="Česká strana sociálně demokratická'">ČSSD</abbr>,
+                <abbr title="Křesťanská a demokratická unie - Československá strana lidová">KDU-ČSL</abbr>, <abbr title="Komunistická strana Čech a Moravy">KSČM</abbr>
+                a <abbr title="Občanská demokratická strana">ODS</abbr>.
+                Pro označení kandidátek sdružení nezávislých kandidátů jsou použity <abbr title="NEZÁVISLÍ PRO PŘIBYSLAV">NPP</abbr> pro <i>NEZÁVISLÍ PRO PŘIBYSLAV</i>
+                a <abbr title="PŘIBYSLAV 2014">P2014</abbr> pro <i>PŘIBYSLAV 2014</i>.
+                <i>Sdružení nezávislých kandidátů Přibyslav</i> z voleb 2010 je označeno jako <abbr title="Sdružení nezávislých kandidátů Přibyslav">SNKP</abbr>.
+            </p>
+
+            <section>
+                <h2>Základní fakta</h2>
+                <p>
+                    <strong> Právo zúčastnit se voleb</strong> do městského zastuptelstva v Přibyslavi <strong>mělo 3207 občanů</strong>,
+                    do tří volebních mísností jich <strong>přišlo 1673, tedy 52,17%</strong>.
+                    Všech 1673 vydaných úředních obálek skončilo ve volebních urnách, všichni příchozí tedy skutečně odvolili (např. v letech 2002 a 2006 tomu tak nebylo).
+                </p>
+                <p>
+                    Každý volič má v případě Přibyslavi 15 hlasů, 1673 voličů tedy mohlo rozdat celkově až 25095 hlasů,
+                    ve skutečnosti ale bylo volebními komisemi napočítáno <strong>22983 platných hlasů</strong>.
+                    Průměrně tedy každý příchozí volič rozdal pouze 13,74 hlasů.
+                </p>
+                <p>
+                    Zákon 491/2001 Sb. o volbách do zastupitelstev neříká nic o evidenci počtu neplatných hlasovacích lístků, nelze tedy tuto informaci zjisti ani z dat ČSÚ.
+                    Na základě předchozích čísel lze říci, že teoreticky až 140 hlasovacích lístů bylo neplatných. Ve skutečnosti bude toto číslo určitě mnohem nižší,
+                    pravděpodobnější je, že někteří voliči nevyužili všech svých 15 hlasů a zakřížkovali menší počet kandidátů.
+                </p>
+                <p>
+                    Komunální volby v Přibyslavi <strong>vyhrála ODS s 20,58 %</strong> hlasů a <strong>společně s druhou KDU-ČSL získaly tři mandáty</strong>.
+                    <strong>Poslední KSČM</strong> s 9,19 % získala <strong>jeden mandát</strong>,
+                    <strong>zbývající strany mají po dvou mandátech</strong>. Všechny kandidující strany tedy uspěly a mají ve zvoleném zastupitelstvu svého zástupce.
+                </p>
+                
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="chart-result" class="chart-placeholder">
+                            <div class="mode-switch">
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="value" checked> Hlasy
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="percent"> Procenta
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="mandate"> Mandáty
+                                </label>
+                            </div>
+                            <!--<figcaption>Celkové výsledky voleb</figcaption>-->
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table">
+                            <thead>
+                                <tr><th>Číslo</th><th>Strana</th><th>Počet hlasů</th><th>Hlasy v %</th><th>Mandáty</th></tr>
+                            </thead>
+                            <tr><td>4</td><td>ODS</td><td>4730</td><td>20,58</td><td>3</td></tr>
+                            <tr><td>2</td><td>KDU-ČSL</td><td>3945</td><td>17,16</td><td>3</td></tr>
+                            <tr><td>7</td><td>ČSSD</td><td>3351</td><td>14,58</td><td>2</td></tr>
+                            <tr><td>3</td><td>NPP</td><td>3243</td><td>14,11</td><td>2</td></tr>
+                            <tr><td>6</td><td>P2014</td><td>3228</td><td>14,05</td><td>2</td></tr>
+                            <tr><td>5</td><td>ANO</td><td>2374</td><td>10,33</td><td>2</td></tr>
+                            <tr><td>1</td><td>KSČM</td><td>2112</td><td>9,19</td><td>1</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Rozdělení mandátů stranám</h2>
+
+                <p>
+                    Způsob rozdělení mandátů jednotlivým stranám popisuje <a href="http://www.zakonyprolidi.cz/cs/2001-491/zneni-20140407#p45-1">§ 45 odst. 1 a 2 zákona č. 491/2001 Sb.</a>
+                    Ten – jednodušeně řečeno – říká, že pro každou stranu se vypočítají podíly tak, že se celkový počet hlasů, které strany získala, vydělí čísly 1, 2, 3, 4,…, 15.
+                    Tyto podíly se seřadí podle velikosti a prvních 15 dostane mandát.
+                </p>
+                <p>Velikost podílů pro jednotlivé strany ukazují následující graf a tabulka. Podíly, které přinesly straně mandát, jsou zvýrazněny.</p>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="chart-mandates">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table">
+                            <thead>
+                                <tr><th></th><th>KSČM</th><th>KDU-ČSL</th><th>NPP</th><th>ODS</th><th>ANO</th><th>P2014</th><th>ČSSD</th></tr>
+                            </thead>
+                            <tr><th>1/1</th><td class="text-bold text-success">2112</td><td class="text-bold text-success">3945</td><td class="text-bold text-success">3243</td><td class="text-bold text-success">4730</td><td class="text-bold text-success">2374</td><td class="text-bold text-success">3228</td><td class="text-bold text-success">3351</td></tr>
+                            <tr><th>1/2</th><td>1056,00</td><td class="text-bold text-success">1972,50</td><td class="text-bold text-success">1621,50</td><td class="text-bold text-success">2365,00</td><td class="text-bold text-success">1187,00</td><td class="text-bold text-success">1614,00</td><td class="text-bold text-success">1675,50</td></tr>
+                            <tr><th>1/3</th><td>704,00</td><td class="text-bold text-success">1315,00</td><td>1081,00</td><td class="text-bold text-success">1576,67</td><td>791,33</td><td>1076,00</td><td>1117,00</td></tr>
+                            <tr><th>1/4</th><td>528,00</td><td>986,25</td><td>810,75</td><td>1182,50</td><td>593,50</td><td>807,00</td><td>837,75</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    Čím větší je dělitel, tím menší je mezi podíly jednotlivých stran rozdíl a několik málo hlasů může rozhodnout o výsledném pořadí.
+                </p>
+                <p>
+                    Posledního 15. zastupitele získalo s podílem 1187 ANO. Jako první pod čarou skončil čtvrtý podíl ODS s hodnotou 1182,5.
+                    <strong>ODS tak chybělo pouhých 18 hlasů</strong> (<code>(4730 + 18) / 4 = 1187</code>), <strong>aby získala čtvrtého zastupitele</strong>.
+                </p>
+                <p>
+                    ČSSD, druhá pod čarou, by na zisk třetího mandátu potřebovala dalších 210 hlasů (<code>1187 * 3 - 3351 = 210</code>).
+                    Třetí NPP by pro zisk třetího mandátu potřebovala o 318 hlasů více. To už je téměř 10 % ze získaných 3243 hlasů.
+                </p>
+                <p>
+                    Vzato z druhé strany, <strong>ANO mělo rezervu pouhých 9 hlasů. Mít o 9 hlasů méně, druhý mandát nezíská</strong> a patnácté místo by připadlo ODS
+                    (<code>(2374 - 9) / 2 = 1182,5 = 4730 / 4</code>).
+                    <strong>Třetí mandát pro KDU-ČSL</strong> za předposlední místo byl získán <strong>se značnou rezervou 397 hlasů</strong>.
+                    KDU-ČSL by musela získat o 398, tedy více jak 10 %, hlasů méně, aby se propadla s třetím podílem na 16. místo za ANO a ODS.
+                </p>
+            </section>
+
+            <div id="circle"></div>
+
+            <div id="patka">
+                <p>Vytvořil <a href="http://henzl.info/">Vašek Henzl</a>. (c) 2014</p>
+            </div>
+
+            <!--<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fvolby.pribyslavsko.info%2Fzastupitelstvo-2014%2Fzkusebni-hlasovaci-listek&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=80&amp;appId=132062036888648" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:80px;" allowtransparency="true"></iframe>-->
+        </div>
+
+    </div><!-- /.container -->
+    <script src="./assets/js/libs/jquery.min.js"></script>
+    <script src="./assets/js/libs/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>-->
+    <script src="./assets/js/libs/d3.v3.min.js"></script>
+    <script src="./assets/js/libs/underscore-min.js"></script>
+
+    <!-- -->
+    <script src="./assets/js/common.js"></script>
+    <script src="./assets/js/chart-result.js"></script>
+    <script src="./assets/js/chart-mandates.js"></script>
+
+    <!-- Google Analytics -->
+    <!--<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-55523273-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>-->
+</body>
+</html>
