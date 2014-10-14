@@ -340,6 +340,43 @@
 
             </section>
 
+            <section class="page-section">
+                <h2>Zvolení zastupitelé</h2>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <select id="chart-members-menu"></select>
+                        <div id="chart-members" class="chart-placeholder">
+                            <div class="mode-switch">
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="votes" checked> Hlasy
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="percent"> Procenta
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="mode" value="percent_total"> Procenta celkem
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table" id="table-members">
+                            <thead>
+                                <tr>
+                                    <th>Jméno</th>
+                                    <th>Počet hlasů</th>
+                                    <th>% hlasů v rámci kandidátky</th>
+                                    <th>% hlasů celkově</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            
+
                 <div id="patka">
                     <p>Vytvořil <a href="http://henzl.info/">Vašek Henzl</a>. (c) 2014</p>
                 </div>
@@ -362,6 +399,7 @@
     <script src="./assets/js/chart-candidates.js"></script>
     <script src="./assets/js/chart-popularity-votes.js"></script>
     <script src="./assets/js/chart-popularity.js"></script>
+    <script src="./assets/js/chart-members.js"></script>
 
 
 
