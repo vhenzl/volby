@@ -1,29 +1,28 @@
 ﻿(function () {
 
-    function createChart(elementId, h, allData, orderFn) {
+    function createChart(elementId, h, data, orderFn) {
         orderFn = orderFn || function (d) { return d; };
         var margin = { top: 50, right: 20, bottom: 30, left: 50 },
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right,
             height = h - margin.top - margin.bottom,
             yTopSpace = 1.2,
-            mode = 'value',
-            data2 = allData[1],
-            data = orderFn(data2.Candidates);
+            mode = 'value';
+
+        var totalVotes = _.reduce(data, function (memo, v) { return memo + v.Votes; }, 0);
+        var average = totalVotes / data.length;
 
         function nameSelector(d, i) {
             var name = d.Name.split(' ');
             return name[0] + ' ' + name[1][0] + '.';
         }
         function xSelector(d, i) {
-            return d.Number;
+            return i+1;
         }
         function colorSelector(d, i) {
             var hsl = d3.hsl(d.Color);
             return d.Mandate
                 ? hsl
-                : d.Votes > data2.Threshold
-                ? hsl.brighter()
-                : hsl.darker();
+                : hsl.brighter();
         }
 
         function yValueSelector(d, i) {
@@ -109,38 +108,14 @@
             .duration(500)
             .delay(function (d, i) { return i * 10; })
             .attr('y', function (d, e) { return yScale(yValueSelector(d, e)) - 5; });
-
-
+        
         var avg = chart
             .insert('line', ':first-child')
             .attr('class', 'border')
             .attr("x1", 0)
             .attr("x2", width)
-            .attr('y1', function (d, e) { return yScale(data2.Average) })
-            .attr("y2", function (d, e) { return yScale(data2.Average) });
-
-        var threshold = chart
-            .insert('line', ':first-child')
-            .attr('class', 'border')
-            .attr("x1", 0)
-            .attr("x2", width)
-            .attr('y1', function (d, e) { return yScale(data2.Threshold) })
-            .attr("y2", function (d, e) { return yScale(data2.Threshold) });
-
-        function changeDataset(listNumber) {
-            data2 = allData[listNumber];
-            data = orderFn(data2.Candidates);
-
-            yValueMax = d3.max(data, yValueSelector) * yTopSpace;
-            yPercentageMax = d3.max(data, yPercentageSelector) * yTopSpace;
-
-            bar.data(data)
-            .style('fill', colorSelector);
-            label.data(data).select('text').text(nameSelector);
-
-            redrawY();
-            redrawX();
-        }
+            .attr('y1', function (d, e) { return yScale(average) })
+            .attr("y2", function (d, e) { return yScale(average) });
 
         function resize(w) {
             width = w - margin.left - margin.right;
@@ -163,7 +138,6 @@
                 .attr('width', xScale.rangeBand());
 
             avg.attr("x2", width);
-            threshold.attr("x2", width);
 
             label.attr('x', function (d, e) { return xScale(xSelector(d, e)) + xScale.rangeBand() / 2; })
 
@@ -200,10 +174,8 @@
                 .delay(function (d, i) { return i * 10; })
                 .attr('y', function (d, e) { return yScale(yValueSelector(d, e)) - 5; });
 
-            avg.attr('y1', function (d, e) { return yScale(data2.Average) })
-                .attr("y2", function (d, e) { return yScale(data2.Average) });
-            threshold.attr('y1', function (d, e) { return yScale(data2.Threshold) })
-                .attr("y2", function (d, e) { return yScale(data2.Threshold) });
+            avg.attr('y1', function (d, e) { return yScale(average) })
+                .attr("y2", function (d, e) { return yScale(average) });
 
             yAxis.scale(yScale);
             chart.select('.y.axis').call(yAxis);
@@ -211,8 +183,7 @@
 
         return {
             changeMode: changeMode,
-            resize: resize,
-            changeDataset: changeDataset
+            resize: resize
         };
     };
 
@@ -324,55 +295,20 @@
         { ListNumber: 7, Number: 15, Age: 59, Votes: 124, Order: 13, Mandate: false, Name: 'Hološ Zdeněk' }
     ];
 
-    var grouped = _.groupBy(raw, function (v) { return v.ListNumber; });
-
-    var data = {};
-    _.each(grouped, function (g, k) {
-        var totalVotes = _.reduce(g, function (memo, v) { return memo + v.Votes; }, 0); // sum
-        var avg = totalVotes / g.length;
-
-        data[k] = {
-            TotalVotes: totalVotes,
-            Average: avg,
-            Threshold: Math.floor(avg) * 1.1,
-            Candidates: _.map(g, function (v, i) {
-                var candidateList = candidateLists['2014'][v.ListNumber.toString()];
-                return {
-                    Number: v.Number,
-                    Age: v.Age,
-                    Votes: v.Votes,
-                    Percent: v.Votes / avg,
-                    Order: v.Order,
-                    Mandate: v.Mandate,
-                    Name: v.Name,
-                    Color: candidateList.Color
-                }
-            })
+    var sorted = _.sortBy(raw, function (v) { return -1*v.Votes; });
+    var data = _.map(sorted, function (v, i) {
+        var candidateList = candidateLists['2014'][v.ListNumber.toString()];
+        return {
+            Number: v.ListNumber + '.' + v.Number,
+            Age: v.Age,
+            Votes: v.Votes,
+            Mandate: v.Mandate,
+            Name: v.Name,
+            Color: candidateList.Color
         }
     });
-        
-    var $menu = $('#chart-candidates-menu');
-    _.each(candidateLists['2014'], function (v) {
-        var $option = $('<option>', { value: v.Number, text: v.Name });
-        $menu.append($option);
-    });
 
-    var chart1 = createChart('#chart-candidates-by-votes', 300, data, function (d) { return _.sortBy(d, function (v) { return -1*v.Votes; }); });
-    var chart2 = createChart('#chart-candidates-by-order', 300, data, function (d) { return _.sortBy(d, function (v) { return (v.Order - (v.Mandate ? 1 : 0) * 100) }); });
-    var chart3 = createChart('#chart-candidates-by-number', 300, data);
-    $menu.on('change', function () {
-        chart1.changeDataset(this.value);
-        chart2.changeDataset(this.value);
-        chart3.changeDataset(this.value);
-    });
-    $(window).on('resize', function () {
-        var w1 = $('#chart-candidates-by-votes').width();
-        var w2 = $('#chart-candidates-by-order').width();
-        var w3 = $('#chart-candidates-by-number').width();
-        console.log(w1,w2);
-        chart1.resize(w1);
-        chart2.resize(w2);
-        chart3.resize(w3);
-    });
+    var chart1 = createChart('#chart-popularity-votes', 300, data);
+    chart1.resize(2500);
     
 })();
