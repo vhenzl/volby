@@ -38,10 +38,12 @@
            right: 10px;
        }
 
-       .chart line.border {
+        .chart line.border {
             fill: none;
-            stroke: #808080;
+            stroke: #aaa;
             shape-rendering: crispEdges;
+            stroke-dasharray: 2,2;
+            stroke-width: 1;
         }
     </style>
 </head>
@@ -202,27 +204,119 @@
 
             <section>
                 <h2>Pořadí kandidátů na kandidátkách</h2>
-
                 <div class="row">
-                    <div class="col-md-6"></div>
                     <div class="col-md-6">
                         <div class="pull-right">
                             Výběr strany:
-                        <select id="chart-candidates-menu">
-                           
-                        </select>
-                            </div>
+                            <select id="chart-candidates-menu"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="chart-candidates-by-votes"></div>
+                        <div class="page-section">
+                            <div><b>Pořadí kandidátů podle pořadovaného čísla</b></div>
+                            <div id="chart-candidates-by-number"></div>
+                        </div>
+
+                        <div class="page-section">
+                            <div><b>Pořadí kandidátů podle počtu získaných hlasů</b></div>
+                            <div id="chart-candidates-by-votes"></div>
+                        </div>
+
+                        <div class="page-section">
+                            <div><b>Pořadí kandidátů podle výsledného umístění</b></div>
+                            <div id="chart-candidates-by-order"></div>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <div id="chart-candidates-by-order"></div>
+                        <p>Uvedené tři grafy ukazují, jak si vedli kandidáti v rámci jednotlivých stran.</p>
+                        <p>
+                            První graf gobrazuje kandidáty v tom pořadí, v jakém byli uvedeni na kandidátní listině. Na druhém grafu jsou kandidáti seřazeni podle počtu hlasů, které obrželi.
+                            Třetí pak ukazuje výsledné pořadí, v jakém byli kandidáti zvoleni, reps. jejich pořadí jako náhradníků.
+                        </p>
+                        <p>
+                            Způsob určení pořadí kandidátů upět definuje zákon č. 491/2001 Sb., konkrétně <a href="http://www.zakonyprolidi.cz/cs/2001-491/zneni-20140407#p45-3">§ 45 odstavce 3 až 5</a>.
+                        </p>
+                        <p>
+                            Ten říká, že se pro každou stranu ze získaných hlasů vypočítá průměrný počet hlasů na kandidáta zaokrouhlený na celé číslo dolů.
+                            Kandidát, který získal více hlasů, než je tento průměr povýšený o 10 %, přeskakuje na začátek kandidátky. Pokud takto přeskočilo více kandidátů,
+                            řadí se podle počtu získaných hlasů. Kandidáti, kteří na 110% hranici nedosáhli, zůstavají seřazeni podle pořadí na kandidátní listině.
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr><th>Strana</th><th>Hlasy</th><th>Průměr</th><th>110 %</th><th>Počet nad 110%</th></tr>
+                            </thead>
+                            <tr><th>KSČM</th><td>2112</td><td>140</td><td>154,0</td><td>3</td></tr>
+                            <tr><th>KDU-ČSL</th><td>3945</td><td>263</td><td>289,3</td><td>3</td></tr>
+                            <tr><th>NPP</th><td>3243</td><td>216</td><td>237,6</td><td>4</td></tr>
+                            <tr><th>ODS</th><td>4730</td><td>315</td><td>346,5</td><td>6</td></tr>
+                            <tr><th>ANO</th><td>2374</td><td>158</td><td>173,8</td><td>5</td></tr>
+                            <tr><th>P2014</th><td>3228</td><td>215</td><td>236,5</td><td>4</td></tr>
+                            <tr><th>ČSSD</th><td>3351</td><td>223</td><td>245,3</td><td>5</td></tr>
+                        </table>
+                        <p>
+                            Jak funguje způsob přeskakování je krásně vidět např. na kandidátce <b>ČSSD</b>. Pět kandidátů překročilo potřebnou 110% hranici 245,3 hlasů,
+                            aby se dostalo na začátek kandidátky. Zde je těchto pět lidí seřazeno podle počtu hlasů, takže <i>Libor Joukl</i> se z desátého místa na kandidátce
+                            dostal na místo první, <i>Jaroslava Slezáková</i> si díky druhému nejvyššímu zisku hlasů udržela druhé místo a lídr kandidátky <i>Hana Hyksová</i>
+                            se s třetím nejvyšším počtem hlasů propadla z prvního až na třetí místo a kvůli zisku pouze dvou mandátů se do zastupitelstva nedostala s je první náhradnicí za ČSSD.
+                        </p>
+                        <p>
+                            Druhý příkad fungování 110% hranice je vidět na kandidátce <b>KDU-ČSL</b>. <i>Jaroslav Horský</i> na 15. místě kandidátky získal 4. nejvyšší počet hlasů
+                            a z tohoto pohledu se umístil hned na prvním místě za třemi zvolenými zastupteli. „Selský rozum“ říká, že je čtvrtý a tedy že je prvním náhradníkem.
+                        </p>
+                        <p>
+                            Tak tomu ovšem není. Protože <i>Horský</i> nepřekročil 110% hranici 289,3 hlasů, se ziskem 286 zůstává na posledním místě jako 12. náhradník.
+                            Od skouku na čtvrté místo jej dělily pouhé čtyři hlasy, čtyři křížky.
+                        </p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr><th>Skok</th><th>Kandidát</th><th>Strana</th><th>Původní pořadí</th><th>Výsledné pořadí</th></tr>
+                            </thead>
+                            <tr><td>9</td><td>Joukl Libor Ing.</td><td>ČSSD</td><td>10</td><td>1</td></tr>
+                            <tr><td>6</td><td>Šimanovský Ivo</td><td>ANO</td><td>10</td><td>4</td></tr>
+                            <tr><td>4</td><td>Šauerová Anna</td><td>ANO</td><td>7</td><td>3</td></tr>
+                            <tr><td>4</td><td>Loužecká Ilona DiS.</td><td>ODS</td><td>8</td><td>4</td></tr>
+                            <tr><td>3</td><td>Křesťan Jiří</td><td>NPP</td><td>7</td><td>4</td></tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            Hranici 110 % v rámci kandidátky překonalo celkem 30 kandidátů. Většina z nich  se ale nacházela na prvních místech kandidátky,
+                            takže ve výsledku se jejich pořadí nijak zásadně nezměnilo. Zajímavější jsou kandidáti dále od volitelných míst.
+                        </p>
+                        <p>
+                            Nejviditelnějším „skokanem“ v rámci kandidátky je již zmíněný <i>Libor Joukl</i> z ČSSD, který byl voliči „vykřížkován“ z desátého místa na první.
+                        </p>
+                        <p>
+                            Další kandidáty, kteří si polepšili o více jak dvě místa, jsou uvedeni v tabulce.
+                        </p>
+                    </div>
+                </div>
+
+
+                <!--<div class="row">
+            <div class="col-md-6">
+                <div id="chart-candidates-by-votes"></div>
+            </div>
+            <div class="col-md-6">
+                <div id="chart-candidates-by-order"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="chart-candidates-by-number"></div>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>-->
 
             </section>
 

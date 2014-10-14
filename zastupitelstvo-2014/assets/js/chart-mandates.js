@@ -76,9 +76,7 @@
             .attr('x1', function (d, e) { return xScale(16) -1 - (xScale.rangeBand() * (1 + barPadding) - xScale.rangeBand()) / 2; })
             .attr("y1", 0)
             .attr("x2", function (d, e) { return xScale(16) -1 - (xScale.rangeBand() * (1 + barPadding) - xScale.rangeBand()) / 2; })
-            .attr("y2", height)
-            .attr("stroke-width", 1)
-            .attr("stroke", "black");
+            .attr("y2", height);
 
         $(window).on('resize', resize);
 

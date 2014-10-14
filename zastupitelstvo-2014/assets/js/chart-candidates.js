@@ -1,12 +1,14 @@
 ﻿(function () {
 
-    function createChart(elementId, elementMenuId, h, allData) {
+    function createChart(elementId, h, allData, orderFn) {
+        orderFn = orderFn || function (d) { return d; };
         var margin = { top: 50, right: 20, bottom: 30, left: 60 },
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right,
-            height = h - margin.top - margin.bottom;
-        var yTopSpace = 1.2;
-        var mode = 'value';        
-        var data = allData[1].Candidates;
+            height = h - margin.top - margin.bottom,
+            yTopSpace = 1.2,
+            mode = 'value',
+            data2 = allData[1],
+            data = orderFn(data2.Candidates);
 
         function nameSelector(d, i) {
             var name = d.Name.split(' ');
@@ -14,6 +16,14 @@
         }
         function xSelector(d, i) {
             return d.Number;
+        }
+        function colorSelector(d, i) {
+            var hsl = d3.hsl(d.Color);
+            return d.Mandate
+                ? hsl
+                : d.Votes > data2.Threshold
+                ? hsl.brighter()
+                : hsl.darker();
         }
 
         function yValueSelector(d, i) {
@@ -72,7 +82,10 @@
             .attr('width', xScale.rangeBand())
             .attr('y', function (d, i) { return height; })
             .attr('height', 0)
-            .style('fill', function (d) { return d.Color });
+            //.style('fill', function (d) { return d.Color })
+            .style('fill', colorSelector)
+            //.style('opacity', function (d) { return d.Mandate ? 1 : (data2.Threshold < d.Votes ? .5 : .2); });
+                .style('opacity', function (d) { return d.Mandate ? 1 : .5; });
 
         bar.transition()
             .duration(500)
@@ -87,7 +100,6 @@
             .style('overflow', 'visible')
             .attr('class', 'bar-label')
             .attr('x', function (d, e) { return xScale(xSelector(d, e)) + xScale.rangeBand() / 2; })
-            //.attr('transform', function (d, e) { return 'translate(' + (xScale(xSelector(d, e)) + xScale.rangeBand()/2) + ',' + height + ')'; })
             .attr('y', function (d, i) { return height; });
 
         label.append('text')
@@ -98,16 +110,35 @@
         label.transition()
             .duration(500)
             .delay(function (d, i) { return i * 10; })
-            //.attr('transform', function (d, i) { return 'translate(' + (xScale(xSelector(d, i)) + xScale.rangeBand() / 2) + ',' + (yScale(yValueSelector(d, i)) - 5) + ')'; })
             .attr('y', function (d, e) { return yScale(yValueSelector(d, e)) - 5; });
 
+
+        var avg = chart
+            .insert('line', ':first-child')
+            .attr('class', 'border')
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr('y1', function (d, e) { return yScale(data2.Average) })
+            .attr("y2", function (d, e) { return yScale(data2.Average) });
+
+        var threshold = chart
+            .insert('line', ':first-child')
+            .attr('class', 'border')
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr('y1', function (d, e) { return yScale(data2.Threshold) })
+            .attr("y2", function (d, e) { return yScale(data2.Threshold) });
+
         function changeDataset(listNumber) {
-            data = allData[listNumber].Candidates;
+            data2 = allData[listNumber];
+            data = orderFn(data2.Candidates);
 
             yValueMax = d3.max(data, yValueSelector) * yTopSpace;
             yPercentageMax = d3.max(data, yPercentageSelector) * yTopSpace;
 
-            bar.data(data).style('fill', function (d) { return d.Color });
+            bar.data(data)
+            .style('fill', colorSelector);
+            //.style('fill', function (d) { return d.Color });
             label.data(data).select('text').text(nameSelector);
 
             redrawY();
@@ -127,13 +158,13 @@
 
         function redrawX() {
             xScale.rangeRoundBands([0, width], .2);
+            xScale.domain(data.map(xSelector));
 
             svg.attr('width', getSvgWidth())
 
             bar.attr('x', function (d, e) { return xScale(xSelector(d, e)); })
                 .attr('width', xScale.rangeBand());
 
-            //label.attr('transform', function (d, i) { return 'translate(' + (xScale(xSelector(d, i)) + xScale.rangeBand() / 2) + ',' + (yScale(yValueSelector(d, i)) - 5) + ')'; })
             label.attr('x', function (d, e) { return xScale(xSelector(d, e)) + xScale.rangeBand() / 2; })
 
             chart.select('.x.axis').call(xAxis);
@@ -162,13 +193,19 @@
                 .delay(function (d, i) { return i * 10; })
                 .attr('y', function (d, e) { return yScale(ySelector(d, e)); })
                 .attr('height', function (d, e) { return height - yScale(ySelector(d, e)); })
+                //.style('opacity', function (d) { return d.Mandate ? 1 : (data2.Threshold < d.Votes ? .3 : .2); });
+                .style('opacity', function (d) { return d.Mandate ? 1 : .5; });
 
             label.transition()
                 .duration(500)
                 .delay(function (d, i) { return i * 10; })
-            //.attr('transform', function (d, i) { return 'translate(' + (xScale(xSelector(d, i)) + xScale.rangeBand() / 2) + ',' + (yScale(ySelector(d, i)) - 5) + ')'; })
                 .attr('y', function (d, e) { return yScale(yValueSelector(d, e)) - 5; });
-            
+
+            avg.attr('y1', function (d, e) { return yScale(data2.Average) })
+                .attr("y2", function (d, e) { return yScale(data2.Average) });
+            threshold.attr('y1', function (d, e) { return yScale(data2.Threshold) })
+                .attr("y2", function (d, e) { return yScale(data2.Threshold) });
+
             yAxis.scale(yScale);
             chart.select('.y.axis').call(yAxis);
         }
@@ -298,7 +335,7 @@
         data[k] = {
             TotalVotes: totalVotes,
             Average: avg,
-            Threshold: avg * 1.1,
+            Threshold: Math.floor(avg) * 1.1,
             Candidates: _.map(g, function (v, i) {
                 var candidateList = candidateLists['2014'][v.ListNumber.toString()];
                 return {
@@ -328,17 +365,37 @@
         $menu.append($option);
     });
 
-    var chart1 = createChart('#chart-candidates-by-votes', '#chart-candidates-menu', 300, data);
-    var chart2 = createChart('#chart-candidates-by-order', '#chart-candidates-menu', 300, data);
+    var chart1 = createChart('#chart-candidates-by-votes', 300, data, function (d) { return _.sortBy(d, function (v) { return -1*v.Votes; }); });
+    var chart2 = createChart('#chart-candidates-by-order', 300, data, function (d) { return _.sortBy(d, function (v) { return (v.Order - (v.Mandate ? 1 : 0) * 100) }); });
+    var chart3 = createChart('#chart-candidates-by-number', 300, data);
     $menu.on('change', function () {
         chart1.changeDataset(this.value);
         chart2.changeDataset(this.value);
+        chart3.changeDataset(this.value);
     });
     $(window).on('resize', function () {
         var w1 = $('#chart-candidates-by-votes').width();
         var w2 = $('#chart-candidates-by-order').width();
+        var w3 = $('#chart-candidates-by-number').width();
         console.log(w1,w2);
         chart1.resize(w1);
         chart2.resize(w2);
+        chart3.resize(w3);
     });
+    
+    _.each(data, function (g, c) {
+        var x = _.sortBy(g.Candidates, function (v) { return (v.Order - (v.Mandate ? 1 : 0) * 100) });
+        var y = _.map(x, function (v, k) {
+            return {
+                Number: v.Number,
+                TotalOrder: k + 1,
+                Jump: v.Number - (k+1),
+                name: v.Name,
+            };
+        });
+        console.log(c);
+        var s = _.sortBy(y, function (v) { return v.Jump; });
+        _.each(s,function (v) { console.log(v.Jump, v.name, v.Number + '->' + v.TotalOrder)});
+    });
+
 })();

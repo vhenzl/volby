@@ -12,7 +12,7 @@
         '2': { Number: 2, Name: 'Křesťanská a demokratická unie - Československá strana lidová', Abbr: 'KDU-ČSL', Color: 'yellow' },
         '3': { Number: 3, Name: 'NEZÁVISLÍ PRO PŘIBYSLAV', Abbr: 'NPP', Color: 'purple' },
         '4': { Number: 4, Name: 'Občanská demokratická strana', Abbr: 'ODS', Color: 'blue' },
-        '5': { Number: 5, Name: 'ANO 2011', Abbr: 'ANO', Color: 'aqua' },
+        '5': { Number: 5, Name: 'ANO 2011', Abbr: 'ANO', Color: 'navy' },
         '6': { Number: 6, Name: 'PŘIBYSLAV 2014', Abbr: 'P2014', Color: 'brown' },
         '7': { Number: 7, Name: 'Česká strana sociálně demokratická', Abbr: 'ČSSD', Color: 'orange' }
     }
