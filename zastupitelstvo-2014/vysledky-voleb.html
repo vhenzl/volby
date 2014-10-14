@@ -324,13 +324,35 @@
                     Až do desátého místa pak pokračují další zvolení zastupitelé za ODS, KDU-ČSL, NPP, P2014 a ČSSD. Nic zásadně překvapivého.
                 </p>
                 <p>
-                    Zajímavější je, že dosavadní strarosta a lídr kandidátky ANO <strong><i>Jan Štefáček</i> se ziskem 302 hlasů obsadil až 18. místo</strong>, třinácté mezi zvolenými zastupitely.
+                    Zajímavější je, že dosavadní starosta a lídr kandidátky ANO <strong><i>Jan Štefáček</i> se ziskem 302 hlasů obsadil až 18. místo</strong>, třinácté mezi zvolenými zastupitely.
                     Za povšimnutí stojí, že 15. místo v zastupitelstvu získal <i>Ladiskav Hladík</i> z 47. místa s pouhými 202 hlasy.
                 </p>
                 <p>
-                    V grafu je šedou linkou vyznačen průměrný počet hlasů na zastupitele, který činí 218,8 hlasu. Tomu je nejblíže s 219 hlasy na 41. místě <i>Milan Kachlík</i>.
-                    Medián má hodnotu 190 hlasů a odpovídá zisku <i>Anny Šauerové</i>.
+                    V grafu je šedou linkou vyznačen <strong>průměrný počet hlasů</strong> na zastupitele, který činí <strong>218,8 hlasu</strong>. Tomu je nejblíže s 219 hlasy na 41. místě <i>Milan Kachlík</i>.
+                    <strong>Medián má hodnotu 190 hlasů</strong> a odpovídá zisku <i>Anny Šauerové</i>.
                 </p>
+                <p>
+                    Následující graf zobrazuje ta samá data, pouze jsou prezentována jako procentuální zisk či ztráta vůči průměrné hodnotě 218,8 hlasu.
+                    Znamená to tedy, že <i>Martin Kamarád</i> získal o 187 % hlasů více, než je zisk průměrného kandidáta, <i>Michael Omes</i> má více o 162 %, atd.
+                    Na druhém konci, předposlední <i>Jaroslav Chmelík</i> a posední <i>Marta Štáflová</i> mají s 88 hlasy vůči průměrnému počtu hlasů méně o 60 %.
+                </p>
+                <div id="chart-popularity-x" style="overflow-x:scroll;"></div>
+                <p>
+                    Uvedené hodnoty v předchozích dvou grafech jsou zatíženy skutečností, že se pracuje s celkovým počtem hlasů, které kandidát získal.
+                    Chceme-li ale alespoň přibližně vidět, kolik který kandidát získal samostatných křížků, pomyslných preferenčních hlasů, musíme zvolit jinou metodiku.
+                </p>
+                <p>
+                    Nabízí se několik možnostní. Nejjednodušší úvaha je vyjít z průměrného počtu hlasů pro kandidátní listinu a zjistit, o kolik procent má více či méně, než je tento průměr.
+                    Takto získanou hodnotu v procentech lze pak porovnávat s hodnotami ostatních kanditátů z jiných stran.
+                    Uvedený způsob má tu nevýhodu, že aritmetický průměr příliš ovlivňují extrémní hodnoty, proto se v tomto případě jeví vhodnější jako referenční hodnotu použít medián.
+                </p>
+                <p>
+                    Další možnost vychází z úvahy, že každá strana získala maximálně tolik hlasů pro celou stranu, kolik je hlasů pro kandidáta s nejnižším počtem.
+                </p>
+
+                <div id="chart-popularity" style="overflow-x:scroll;"></div>
+                <div id="chart-popularity-m" style="overflow-x:scroll;"></div>
+                <div id="chart-popularity-y" style="overflow-x:scroll;"></div>
             </section>
 
                 <div id="patka">
@@ -354,6 +376,7 @@
     <script src="./assets/js/chart-mandates.js"></script>
     <script src="./assets/js/chart-candidates.js"></script>
     <script src="./assets/js/chart-popularity-votes.js"></script>
+    <script src="./assets/js/chart-popularity.js"></script>
 
 
 
