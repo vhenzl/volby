@@ -2,7 +2,7 @@
 
     function createChart(elementId, h, allData, orderFn) {
         orderFn = orderFn || function (d) { return d; };
-        var margin = { top: 50, right: 20, bottom: 30, left: 60 },
+        var margin = { top: 50, right: 20, bottom: 30, left: 50 },
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right,
             height = h - margin.top - margin.bottom,
             yTopSpace = 1.2,
@@ -82,10 +82,8 @@
             .attr('width', xScale.rangeBand())
             .attr('y', function (d, i) { return height; })
             .attr('height', 0)
-            //.style('fill', function (d) { return d.Color })
             .style('fill', colorSelector)
-            //.style('opacity', function (d) { return d.Mandate ? 1 : (data2.Threshold < d.Votes ? .5 : .2); });
-                .style('opacity', function (d) { return d.Mandate ? 1 : .5; });
+            .style('opacity', function (d) { return d.Mandate ? 1 : .5; });
 
         bar.transition()
             .duration(500)
@@ -138,7 +136,6 @@
 
             bar.data(data)
             .style('fill', colorSelector);
-            //.style('fill', function (d) { return d.Color });
             label.data(data).select('text').text(nameSelector);
 
             redrawY();
@@ -193,7 +190,6 @@
                 .delay(function (d, i) { return i * 10; })
                 .attr('y', function (d, e) { return yScale(ySelector(d, e)); })
                 .attr('height', function (d, e) { return height - yScale(ySelector(d, e)); })
-                //.style('opacity', function (d) { return d.Mandate ? 1 : (data2.Threshold < d.Votes ? .3 : .2); });
                 .style('opacity', function (d) { return d.Mandate ? 1 : .5; });
 
             label.transition()
@@ -351,14 +347,7 @@
             })
         }
     });
-
-    console.log(data);
-
-    //d3.select('#chart-candidates-menu').selectAll('option').data(candidateLists['2014'])
-    //.enter().append('option')
-    //.attr('value', function (d) { console.log(d); return d.Number; })
-    //.text(function (d) { return d.Abbr; });
-
+        
     var $menu = $('#chart-candidates-menu');
     _.each(candidateLists['2014'], function (v) {
         var $option = $('<option>', { value: v.Number, text: v.Name });
@@ -383,19 +372,4 @@
         chart3.resize(w3);
     });
     
-    _.each(data, function (g, c) {
-        var x = _.sortBy(g.Candidates, function (v) { return (v.Order - (v.Mandate ? 1 : 0) * 100) });
-        var y = _.map(x, function (v, k) {
-            return {
-                Number: v.Number,
-                TotalOrder: k + 1,
-                Jump: v.Number - (k+1),
-                name: v.Name,
-            };
-        });
-        console.log(c);
-        var s = _.sortBy(y, function (v) { return v.Jump; });
-        _.each(s,function (v) { console.log(v.Jump, v.name, v.Number + '->' + v.TotalOrder)});
-    });
-
 })();
