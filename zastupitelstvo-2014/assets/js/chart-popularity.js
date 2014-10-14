@@ -327,75 +327,8 @@
         }
     });
 
-    var g = _.groupBy(raw, function (v) { return v.ListNumber; });
-    var averages = {};
-    var medians = {};
-    var mins = {};
-    var mins7 = {};
-    _.each(g, function (v, k) {
-        var t = _.reduce(v, function (memo, x) { return memo + x.Votes; }, 0);
-        averages[k] = t / v.length;
-        medians[k] = median(v, function (x) { return x.Votes });
-        mins[k] = _.min(_.map(v, function (x) { return x.Votes; }), function (x) { return x; });
-        mins7[k] = _.min(_.map(_.first(_.sortBy(v, function (x) {
-            return x.Number;
-        }), 7
-        ), function (x) {
-            return x.Votes;
-        }), function (x) {
-            return x;
-        });
-    });
-
-
-    function mapWithBase(base) {
-        var mapped = _.map(raw, function (v, i) {
-            var candidateList = candidateLists['2014'][v.ListNumber.toString()];
-            return {
-                Percent: ((v.Votes - base[v.ListNumber]) / base[v.ListNumber]),
-                Mandate: v.Mandate,
-                Name: v.Name,
-                Color: candidateList.Color
-            }
-        });
-        return  _.sortBy(mapped, function (v) { return -1 * v.Percent; });
-    }
-
-
-    //https://gist.github.com/AndreasBriese/1670507
-    function median(obj, iterator, context) {
-        if (_.isEmpty(obj)) return Infinity;
-        var tmpObj = [];
-        if (!iterator && _.isArray(obj)) {
-            tmpObj = _.clone(obj);
-            tmpObj.sort(function (f, s) { return f - s; });
-        } else {
-            _.isArray(obj) && _.each(obj, function (value, index, list) {
-                tmpObj.push(iterator ? iterator.call(context, value, index, list) : value);
-                tmpObj.sort();
-            });
-        };
-        return tmpObj.length % 2 ? tmpObj[Math.floor(tmpObj.length / 2)] : (_.isNumber(tmpObj[tmpObj.length / 2 - 1]) && _.isNumber(tmpObj[tmpObj.length / 2])) ? (tmpObj[tmpObj.length / 2 - 1] + tmpObj[tmpObj.length / 2]) / 2 : tmpObj[tmpObj.length / 2 - 1];
-    };
-
-    var chart1 = createChart('#chart-popularity-x', 300, data1);
+    var chart1 = createChart('#chart-popularity-votes-2', 300, data1);
     chart1.resize(2500);
 
-
-    var dataX = {
-        '1': mapWithBase(averages),
-        '2': mapWithBase(medians),
-        '3': mapWithBase(mins),
-        '4': mapWithBase(mins7)
-    };
-    console.log(mins, mins7)
-    var chart2 = createChart('#chart-popularity', 300, dataX[2]);
-    chart2.resize(2500);
-
-    $('#chart-popularity-switch input').on('change', function () {
-        chart2.changeData(dataX[this.value]);
-    });
-
-    console.log(dataX);
     
 })();
