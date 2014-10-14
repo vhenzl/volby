@@ -145,6 +145,20 @@
             chart.select('.x.axis').call(xAxis);
         }
 
+        function changeData(d) {
+            data = d;
+
+            yValueMax = d3.max(data, yValueSelector) * yTopSpace;
+            yPercentageMax = d3.max(data, yPercentageSelector) * yTopSpace;
+            yValueMin = d3.min(data, yValueSelector) * yTopSpace;
+            yPercentageMin = d3.min(data, yPercentageSelector) * yTopSpace;
+
+            bar.data(data).style('fill', colorSelector);
+            label.data(data).select('text').text(nameSelector);
+
+            redrawY();
+            redrawX();
+        }
 
         function redrawY() {
             var ySelector, yMax, yMin;
@@ -183,7 +197,8 @@
 
         return {
             changeMode: changeMode,
-            resize: resize
+            resize: resize,
+            changeData: changeData
         };
     };
 
@@ -316,55 +331,38 @@
     var averages = {};
     var medians = {};
     var mins = {};
+    var mins7 = {};
     _.each(g, function (v, k) {
         var t = _.reduce(v, function (memo, x) { return memo + x.Votes; }, 0);
         averages[k] = t / v.length;
         medians[k] = median(v, function (x) { return x.Votes });
-        mins[k] = _.min(_.map(v, function (x) { return x.Votes; }), function (x) { return x;});
+        mins[k] = _.min(_.map(v, function (x) { return x.Votes; }), function (x) { return x; });
+        mins7[k] = _.min(_.map(_.first(_.sortBy(v, function (x) {
+            return x.Number;
+        }), 7
+        ), function (x) {
+            return x.Votes;
+        }), function (x) {
+            return x;
+        });
     });
-    console.log(mins);
-    var data2 = _.map(raw, function (v, i) {
-        var candidateList = candidateLists['2014'][v.ListNumber.toString()];
-        return {
-            Number: v.ListNumber + '.' + v.Number,
-            Age: v.Age,
-            Votes: v.Votes - averages[v.ListNumber],
-            Percent: ((v.Votes - averages[v.ListNumber]) / averages[v.ListNumber]),
-            Mandate: v.Mandate,
-            Name: v.Name,
-            Color: candidateList.Color
-        }
-    });
-    data2 = _.sortBy(data2, function (v) { return -1 * v.Percent; });
 
-    var data3 = _.map(raw, function (v, i) {
-        var candidateList = candidateLists['2014'][v.ListNumber.toString()];
-        return {
-            Number: v.ListNumber + '.' + v.Number,
-            Age: v.Age,
-            Votes: v.Votes - medians[v.ListNumber],
-            Percent: ((v.Votes - medians[v.ListNumber]) / medians[v.ListNumber]),
-            Mandate: v.Mandate,
-            Name: v.Name,
-            Color: candidateList.Color
-        }
-    });
-    data3 = _.sortBy(data3, function (v) { return -1 * v.Percent; });
 
-    var data4 = _.map(raw, function (v, i) {
-        var candidateList = candidateLists['2014'][v.ListNumber.toString()];
-        return {
-            Number: v.ListNumber + '.' + v.Number,
-            Age: v.Age,
-            Votes: v.Votes - mins[v.ListNumber],
-            Percent: ((v.Votes - mins[v.ListNumber]) / mins[v.ListNumber]),
-            Mandate: v.Mandate,
-            Name: v.Name,
-            Color: candidateList.Color
-        }
-    });
-    data4 = _.sortBy(data4, function (v) { return -1 * v.Percent; });
+    function mapWithBase(base) {
+        var mapped = _.map(raw, function (v, i) {
+            var candidateList = candidateLists['2014'][v.ListNumber.toString()];
+            return {
+                Percent: ((v.Votes - base[v.ListNumber]) / base[v.ListNumber]),
+                Mandate: v.Mandate,
+                Name: v.Name,
+                Color: candidateList.Color
+            }
+        });
+        return  _.sortBy(mapped, function (v) { return -1 * v.Percent; });
+    }
 
+
+    //https://gist.github.com/AndreasBriese/1670507
     function median(obj, iterator, context) {
         if (_.isEmpty(obj)) return Infinity;
         var tmpObj = [];
@@ -382,13 +380,22 @@
 
     var chart1 = createChart('#chart-popularity-x', 300, data1);
     chart1.resize(2500);
-    var chart2 = createChart('#chart-popularity', 300, data2);
-    chart2.resize(2500);
-    var chart3 = createChart('#chart-popularity-m', 300, data3);
-    chart3.resize(2500);
-    var chart4 = createChart('#chart-popularity-y', 300, data4);
-    chart4.resize(2500);
 
-    console.log(data4);
+
+    var dataX = {
+        '1': mapWithBase(averages),
+        '2': mapWithBase(medians),
+        '3': mapWithBase(mins),
+        '4': mapWithBase(mins7)
+    };
+    console.log(mins, mins7)
+    var chart2 = createChart('#chart-popularity', 300, dataX[2]);
+    chart2.resize(2500);
+
+    $('#chart-popularity-switch input').on('change', function () {
+        chart2.changeData(dataX[this.value]);
+    });
+
+    console.log(dataX);
     
 })();
