@@ -2,3 +2,4 @@
 RewriteEngine on
 RewriteBase /volby/
 RewriteRule ^zkusebni-hlasovaci-listek$ /zastupitelstvo-2014/zkusebni-hlasovaci-listek.html
+RewriteRule ^vysledky-voleb$ /zastupitelstvo-2014/vysledky-voleb.html
