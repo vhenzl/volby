@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="" />
+    <meta name="description" content="Kdo získal nejvíce hlasů? Kdo si polepšil a kdo propadl? Na základě čeho získaly strany mandáty? Výsledky voleb do zastupitelstva města Přibyslav přehledně v grafech." />
     <meta name="author" content="Vašek Henzl, vasek.henzl@gmail.com">
     <link rel="canonical" href="http://volby.pribyslavsko.info/zastupitelstvo-2014/vysledky-voleb">
     <!--<link rel="icon" href="../../favicon.ico">-->
@@ -49,7 +49,23 @@
 </head>
 
 <body>
+    <script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '305972666254320',
+            xfbml: true,
+            version: 'v2.1'
+        });
+    };
 
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/cs_CZ/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -431,6 +447,15 @@
             </section>
             
             <footer class="page-footer">
+                <p>
+                    <div class="fb-like"
+                         data-href="http://volby.pribyslavsko.info/zastupitelstvo-2014/vysledky-voleb"
+                         data-layout="standard"
+                         data-action="like"
+                         data-show-faces="true"
+                         data-share="true">
+                    </div>
+                </p>    
                 <p>
                     <a title="Toto stránka podléhá licenci Creative Commons Uveďte autora 4.0 Mezinárodní License" rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.cs">
                         <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
