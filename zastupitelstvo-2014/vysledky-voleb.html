@@ -50,21 +50,21 @@
 
 <body>
     <script>
-    window.fbAsyncInit = function () {
-        FB.init({
-            appId: '305972666254320',
-            xfbml: true,
-            version: 'v2.1'
-        });
-    };
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '305972666254320',
+                xfbml: true,
+                version: 'v2.1'
+            });
+        };
 
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) { return; }
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/cs_CZ/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) { return; }
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/cs_CZ/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -75,12 +75,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Komunální volby 2014</a>
+                <a class="navbar-brand" href="./">Komunální volby 2014</a>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="./simulator-hlasovaciho-listu">Simulátor hlasovacího lístku</a></li>
-                    <li><a href="./strany-a-kandidati">Strany a kandidáti</a></li>
+                    <li><a href="./zkusebni-hlasovaci-listek">Simulátor hlasovacího lístku</a></li>
+                    <!--<li><a href="./strany-a-kandidati">Strany a kandidáti</a></li>-->
                     <li class="active"><a href="./vysledky-voleb">Výsledky voleb</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -97,11 +97,11 @@
 
             <div class="alert alert-warning">
                 <h4>Upozornění</h4>
-                <p>Prezentovaná data pocházejí z údajů <a href="http://www.czso.cz/"><abbr title="Český statistický úřad">ČSÚ</abbr></a> ze stránek <a href="http://volby.cz/">volby.cz</a>.</p>
                 <p>
-                    Data byla zpracována částečně strojově, z části ručně. Spárování kandidátů mezi jednotlivými volbami bylo provedeno automaticky na základě shody jména a věku, případně upraveno manuálně.
-                    V případě např. změny příjmení tak ke spárování nemuselo dojít. Pokud takovouto nesrovnalost objevíte, dejte mi prosím vědět.
+                    Prezentovaná data pocházejí z údajů <a href="http://www.czso.cz/"><abbr title="Český statistický úřad">ČSÚ</abbr></a> ze stránek <a href="http://volby.cz/">volby.cz</a>.
+                    Data byla zpracována částečně strojově, z části ručně.
                 </p>
+                <p>Pokud objevíte nějakou nesrovnalost, dejte mi prosím vědět.</p>
             </div>
 
             <p>
@@ -135,8 +135,8 @@
                     <strong>Poslední KSČM</strong> s 9,19 % získala <strong>jeden mandát</strong>,
                     <strong>zbývající strany mají po dvou mandátech</strong>. Všechny kandidující strany tedy uspěly a mají ve zvoleném zastupitelstvu svého zástupce.
                 </p>
-                
-                
+
+
                 <div class="row">
                     <div class="col-md-6">
                         <div id="chart-result" class="chart-placeholder">
@@ -438,14 +438,14 @@
                     Naopak <strong><i>Jan Štefáček</i> a <i>Zdena Neumannová</i> byli zvoleni do všech šesti zastupitelstev</strong> od roku 1994.
                 </p>
                 <p>
-                    Tím se také řadí k nejúspěšnějším kandidátům, neboť za místo v zastupitelstvu proměnili všechny své kandidatury. Podobně je na tom je 
+                    Tím se také řadí k nejúspěšnějším kandidátům, neboť za místo v zastupitelstvu proměnili všechny své kandidatury. Podobně je na tom je
                     <i>Josef Pelikán</i> se třemi kandidaturami a třemi zvoleními a <i>Marie Křesťanová</i>, <i>Jan Thomayer</i> a <i>Jaroslava Slezáková</i>.
                 </p>
                 <p>
-                    Poslední jmenovaná však ihned po zvolení rezignovala, a tak místo ní hned na ustanovující schůzi zastupitelstva nastoupila náhradnice <i>Marie Musilová</i>.
+                    Poslední jmenovaná však ihned po zvolení rezignovala, a tak místo ní na ustanovující schůzi zastupitelstva nastoupila náhradnice <i>Marie Musilová</i>.
                 </p>
             </section>
-            
+
             <footer class="page-footer">
                 <p>
                     <div class="fb-like"
@@ -455,7 +455,7 @@
                          data-show-faces="true"
                          data-share="true">
                     </div>
-                </p>    
+                </p>
                 <p>
                     <a title="Toto stránka podléhá licenci Creative Commons Uveďte autora 4.0 Mezinárodní License" rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.cs">
                         <img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
@@ -463,7 +463,7 @@
                     Vytvořil <a href="http://henzl.info/">Vašek Henzl</a>, říjen 2014.
                 </p>
             </footer>
-</div>
+        </div>
 
     </div><!-- /.container -->
     <script src="./assets/js/libs/jquery.min.js"></script>
