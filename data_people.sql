@@ -17,3 +17,10 @@ update Candidates set PersonId = 163 where PersonId in (164, 165);
 update Candidates set PersonId = 295 where PersonId = 151;
 
 delete from People where (select count(*) from Candidates c where c.PersonId = People.Id) = 0;
+
+
+update People p set Sex = 'F'
+where exists (select 1 from Candidates c where c.Mandate = 1 and p.Id = c.PersonId) and substring_index(p.Name, ' ', 1) like '%ová';
+update People p set Sex = 'F' where Id= 206;
+update People p set Sex = 'M'
+where exists (select 1 from Candidates c where c.Mandate = 1 and p.Id = c.PersonId) and p.Sex is null;
