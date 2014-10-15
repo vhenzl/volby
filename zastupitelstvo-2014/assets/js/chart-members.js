@@ -5,7 +5,7 @@
             width = parseInt(d3.select(elementId).style('width'), 10) - margin.left - margin.right,
             height = h - margin.top - margin.bottom,
             yTopSpace = 1.2,
-            mode = 'percent';
+            mode = 'votes';
         
         function nameSelector(d, i) {
             var name = d.Name.split(' ');
@@ -52,7 +52,7 @@
         var yAxis = d3.svg.axis()
             .scale(yScale)
             .orient('left')
-            .ticks(10, '%');
+            .ticks(10, 'd');
 
         var svg = d3.select(elementId).append('svg')
             .attr('class', 'chart bar-chart')

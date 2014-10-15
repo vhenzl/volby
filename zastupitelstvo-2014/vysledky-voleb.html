@@ -126,13 +126,13 @@
                         <div id="chart-result" class="chart-placeholder">
                             <div class="mode-switch">
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="value" checked> Hlasy
+                                    <input type="radio" name="mode1" value="value" checked> Hlasy
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="percent"> Procenta
+                                    <input type="radio" name="mode1" value="percent"> Procenta
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="mandate"> Mandáty
+                                    <input type="radio" name="mode1" value="mandate"> Mandáty
                                 </label>
                             </div>
                             <!--<figcaption>Celkové výsledky voleb</figcaption>-->
@@ -342,20 +342,62 @@
 
             <section class="page-section">
                 <h2>Zvolení zastupitelé</h2>
-
+                <p>
+                    Následující tabulka zobrazuje všechny zvolené zastupitele v pořadí, v jakém byli do zastupitelsta zvoleni na základě rozdělování mandátů stranám,
+                    jak bylo popsáno výše v textu. Zároveň obsahuje informaci, kolikrát která osoba do zastupitelstva kandidovala a kolikrát byla zvolena.
+                </p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Pořadí zvolení</th>
+                                    <th>Jméno</th>
+                                    <th>Strana</th>
+                                    <th>Věk</th>
+                                    <th>Počet hlasů</th>
+                                    <th>Počet kandidatur</th>
+                                    <th>Počet mandátů</th>
+                                </tr>
+                            </thead>
+                            <tr><td>1</td><td>Kamarád Martin</td><td>ODS</td><td>39</td><td>629</td><td>5</td><td>4</td></tr>
+                            <tr><td>2</td><td>Omes Michael</td><td>KDU-ČSL</td><td>46</td><td>574</td><td>6</td><td>5</td></tr>
+                            <tr><td>3</td><td>Joukl Libor Ing.</td><td>ČSSD</td><td>48</td><td>438</td><td>5</td><td>4</td></tr>
+                            <tr><td>4</td><td>Křesťanová Marie Ing.</td><td>NPP</td><td>46</td><td>525</td><td>2</td><td>2</td></tr>
+                            <tr><td>5</td><td>Zábrana Václav Ing.</td><td>P2014</td><td>52</td><td>503</td><td>6</td><td>5</td></tr>
+                            <tr><td>6</td><td>Štefáček Jan Mgr. Bc.</td><td>ANO</td><td>64</td><td>302</td><td>6</td><td>6</td></tr>
+                            <tr><td>7</td><td>Benc Ota Mgr.</td><td>ODS</td><td>49</td><td>548</td><td>6</td><td>4</td></tr>
+                            <tr><td>8</td><td>Neumanová Zdena Mgr.</td><td>KSČM</td><td>60</td><td>350</td><td>6</td><td>6</td></tr>
+                            <tr><td>9</td><td>Henzl Václav</td><td>KDU-ČSL</td><td>54</td><td>486</td><td>5</td><td>4</td></tr>
+                            <tr><td>10</td><td>Slezáková Jaroslava Ing.</td><td>ČSSD</td><td>62</td><td>384</td><td>2</td><td>2</td></tr>
+                            <tr><td>11</td><td>Thomayer Jan Ing.</td><td>NPP</td><td>35</td><td>379</td><td>2</td><td>2</td></tr>
+                            <tr><td>12</td><td>Pelikán Josef</td><td>P2014</td><td>65</td><td>287</td><td>3</td><td>3</td></tr>
+                            <tr><td>13</td><td>Šnýdlová Anna Mgr.</td><td>ODS</td><td>66</td><td>405</td><td>6</td><td>5</td></tr>
+                            <tr><td>14</td><td>Jaroš Libor</td><td>KDU-ČSL</td><td>37</td><td>328</td><td>4</td><td>1</td></tr>
+                            <tr><td>15</td><td>Hladík Ladislav Ing.</td><td>ANO</td><td>65</td><td>202</td><td>6</td><td>1</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <p>
+                    Další tabulka a graf ukazují, jak si zvolení zastupitelé vedli v porovnání s předchozími volbami, a to až zpět do roku 1994.
+                    Pro volby z roku 1990 údaje na stránkách ČSÚ chybí.
+                </p>
+                <p>
+                    Zobrazen je celkový počet získaných hlasů, procentuální zisk hlasů v rámci strany a procenta hlasů získaných celkově mezi všemi kandidáty.
+                </p>
                 <div class="row">
                     <div class="col-md-6">
-                        <select id="chart-members-menu"></select>
+                        Výběr zastupitele: <select id="chart-members-menu"></select>
                         <div id="chart-members" class="chart-placeholder">
                             <div class="mode-switch">
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="votes" checked> Hlasy
+                                    <input type="radio" name="mode2" value="votes" checked> Hlasy
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="percent"> Procenta
+                                    <input type="radio" name="mode2" value="percent"> Procenta
                                 </label>
                                 <label class="radio-inline">
-                                    <input type="radio" name="mode" value="percent_total"> Procenta celkem
+                                    <input type="radio" name="mode2" value="percent_total"> Procenta celkově
                                 </label>
                             </div>
                         </div>
@@ -364,7 +406,7 @@
                         <table class="table" id="table-members">
                             <thead>
                                 <tr>
-                                    <th>Jméno</th>
+                                    <th>Rok</th>
                                     <th>Počet hlasů</th>
                                     <th>% hlasů v rámci kandidátky</th>
                                     <th>% hlasů celkově</th>
@@ -374,6 +416,18 @@
                         </table>
                     </div>
                 </div>
+                <p>
+                    Jak je uvedených dat vidět, do zastupitelstva byli v těchto volbách <strong>zvoleni dva zastupitelé poprvé: <i>Libor Jaroš</i> a <i>Ladislav Hladík</i></strong>,
+                    zbývající zastupitelé mají minimálně jedno úspěšné zvolení již za sebou.
+                    Naopak <strong><i>Jan Štefáček</i> a <i>Zdena Neumannová</i> byli zvoleni do všech šesti zastupitelstev</strong> od roku 1994.
+                </p>
+                <p>
+                    Tím se také řadí k nejúspěšnějším kandidátům, neboť za místo v zastupitelstvu proměnili všechny své kandidatury. Podobně je na tom je 
+                    <i>Josef Pelikán</i> se třemi kandidaturami a třemi zvoleními a <i>Marie Křesťanová</i>, <i>Jan Thomayer</i> a <i>Jaroslava Slezáková</i>.
+                </p>
+                <p>
+                    Poslední jmenovaná však ihned po zvolení rezignovala, a tak místo ní hned na ustanovující schůzi zastupitelstva nastoupila náhradnice <i>Marie Musilová</i>.
+                </p>
             </section>
             
 
