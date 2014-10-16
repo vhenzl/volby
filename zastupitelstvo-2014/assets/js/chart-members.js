@@ -209,7 +209,6 @@
         data1[k] = _.sortBy(r, function (s) { return s.Year; });
     });
     
-    console.log(data1);
 
     var names = _.sortBy(_.keys(data1), function (k) { return k;});
 

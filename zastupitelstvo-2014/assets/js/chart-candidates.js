@@ -369,7 +369,6 @@
         var w1 = $('#chart-candidates-by-votes').width();
         var w2 = $('#chart-candidates-by-order').width();
         var w3 = $('#chart-candidates-by-number').width();
-        console.log(w1,w2);
         chart1.resize(w1);
         chart2.resize(w2);
         chart3.resize(w3);
