@@ -44,3 +44,15 @@ CREATE TABLE `Elections` (
 ALTER TABLE `CandidateLists`
 ADD `TotalVotes` int NULL,
 ADD `Mandates` int NULL;
+
+ALTER TABLE `People`
+ADD `Sex` enum('M', 'F') NULL;
+
+CREATE TABLE `Parties` (
+  `Id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `Name` varchar(200) NOT NULL
+);
+
+ALTER TABLE `CandidateLists`
+ADD `PartyId` int(11) NULL,
+ADD FOREIGN KEY (`PartyId`) REFERENCES `Parties` (`Id`) ON DELETE SET NULL;
