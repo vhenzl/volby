@@ -1,0 +1,3 @@
+# Redirect domain aliases to primary domain
+https://pribyslavsko.info/* https://volby.pribyslavsko.info/:splat 302!
+https://www.pribyslavsko.info/* https://volby.pribyslavsko.info/:splat 302!
